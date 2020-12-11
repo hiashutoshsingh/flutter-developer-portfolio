@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_developer_portfolio/about.dart';
 import 'package:flutter_developer_portfolio/app_bar.dart';
 import 'package:flutter_developer_portfolio/constants.dart';
 import 'package:flutter_developer_portfolio/social_handles.dart';
@@ -29,7 +30,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           child: Row(
             mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.end,
+            // crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -46,13 +47,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              Spacer(),
-              Text(
-                'You have pushed the button this many times:',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
-                  color: Colors.white,
+              SizedBox(
+                width: 128,
+              ),
+              Expanded(
+                child: ListView(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  children: [
+                    About(),
+                  ],
                 ),
               ),
               Spacer(),
