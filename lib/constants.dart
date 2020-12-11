@@ -10,4 +10,12 @@ class Constants {
   static final Color lightestSlate = Color(0xffccd6f6);
   static final Color green = Color(0xff64ffda);
   static final Color white = Color(0xffe6f1ff);
+
+  static final String githubUrl = 'https://github.com/hiashutoshsingh';
+  static final String linkedinUrl =
+      'https://www.linkedin.com/in/hiashutoshsingh/';
+  static final String twitterUrl = 'https://twitter.com/hiashutoshsingh';
+  static final String instagramUrl =
+      'https://www.instagram.com/hiashutoshsingh/';
+  static final String facebookUrl = 'https://www.facebook.com/hiashutoshsingh';
 }
