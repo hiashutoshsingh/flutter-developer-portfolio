@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_developer_portfolio/about.dart';
 import 'package:flutter_developer_portfolio/app_bar.dart';
 import 'package:flutter_developer_portfolio/constants.dart';
+import 'package:flutter_developer_portfolio/introduction.dart';
 import 'package:flutter_developer_portfolio/social_handles.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -53,8 +54,12 @@ class _HomeScreenState extends State<HomeScreen> {
               Expanded(
                 child: ListView(
                   shrinkWrap: true,
-                  physics: NeverScrollableScrollPhysics(),
+                  // physics: NeverScrollableScrollPhysics(),
                   children: [
+                    Introduction(),
+                    SizedBox(
+                      height: 400,
+                    ),
                     About(),
                   ],
                 ),
