@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_developer_portfolio/constants.dart';
 
-class About extends StatelessWidget {
+class Introduction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -9,38 +9,42 @@ class About extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Hello! I'm Ashutosh, a software developer based in India.",
+            'Hi, my name is',
             style: TextStyle(
-              fontSize: 16,
-              color: Constants.slate,
+              fontWeight: FontWeight.w600,
+              fontSize: 14,
+              color: Constants.green,
+            ),
+          ),
+          SizedBox(
+            height: 32,
+          ),
+          Text(
+            'Ashutosh Singh.',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 64,
+              color: Constants.white,
             ),
           ),
           SizedBox(
             height: 16,
           ),
           Text(
-            'I am currently developing mobile apps using Flutter and have delivered 10+ projects in mobile and web. \nI also love to produce music beats, I invest sometime in learning and making beats using Fl Studio.',
+            'I build mobile apps.',
             style: TextStyle(
-              fontSize: 16,
-              color: Constants.slate,
+              fontWeight: FontWeight.bold,
+              fontSize: 64,
+              color: Constants.lightSlate,
             ),
           ),
           SizedBox(
-            height: 16,
+            height: 32,
           ),
           Text(
-            'I work as Software Developer at Innovaccer. I do some side projects to enhance my skills in mobile.',
+            'I am Software Developer based out of India specialized in building mobile apps. \nCurrently I am Fluttering!',
             style: TextStyle(
-              fontSize: 16,
-              color: Constants.slate,
-            ),
-          ),
-          SizedBox(
-            height: 16,
-          ),
-          Text(
-            "Some technologies which I have worked on are:",
-            style: TextStyle(
+              fontWeight: FontWeight.w600,
               fontSize: 16,
               color: Constants.slate,
             ),
