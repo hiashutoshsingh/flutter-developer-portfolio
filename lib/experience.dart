@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_developer_portfolio/company_job_info.dart';
 import 'package:flutter_developer_portfolio/company_tile.dart';
 import 'package:flutter_developer_portfolio/sub_header.dart';
 
@@ -10,6 +11,7 @@ class Experience extends StatefulWidget {
 class _ExperienceState extends State<Experience> {
   List<String> _companyList;
   List<bool> _companySelected = <bool>[];
+  int _selectedIndex = 0;
 
   @override
   void initState() {
@@ -57,6 +59,7 @@ class _ExperienceState extends State<Experience> {
                       hoverColor: Colors.transparent,
                       onTap: () {
                         setState(() {
+                          _selectedIndex = index;
                           _companySelected[index] = true;
                           for (int i = 0; i < 5; i++) {
                             if (i != index) {
@@ -66,7 +69,8 @@ class _ExperienceState extends State<Experience> {
                         });
                       },
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 4),
+                        padding: const EdgeInsets.symmetric(vertical: 4) +
+                            EdgeInsets.only(right: 64),
                         child: CompanyTile(
                           val: _companyList[index],
                           selected: _companySelected[index],
@@ -76,11 +80,11 @@ class _ExperienceState extends State<Experience> {
                   },
                 ),
               ),
-              Container(
-                color: Colors.lime,
-                // width: double.infinity,
-                // height: 100,
-                // height: double.infinity,
+              Expanded(
+                flex: 2,
+                child: CompanyJobInfo(
+                  selectedIndex: 4 - _selectedIndex,
+                ),
               )
             ],
           ),
