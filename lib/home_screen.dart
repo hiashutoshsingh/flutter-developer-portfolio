@@ -52,24 +52,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: 128,
               ),
               Expanded(
-                child: ListView(
-                  shrinkWrap: true,
-                  // physics: NeverScrollableScrollPhysics(),
+                child: PageView(
+                  scrollDirection: Axis.vertical,
                   children: [
                     Introduction(),
-                    SizedBox(
-                      height: 400,
-                    ),
                     About(),
                   ],
-                ),
-              ),
-              Spacer(),
-              Text(
-                'Email',
-                style: TextStyle(
-                  fontSize: 24,
-                  color: Colors.white,
                 ),
               ),
             ],
