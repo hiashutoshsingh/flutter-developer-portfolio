@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_developer_portfolio/about.dart';
 import 'package:flutter_developer_portfolio/app_bar.dart';
 import 'package:flutter_developer_portfolio/constants.dart';
+import 'package:flutter_developer_portfolio/experience.dart';
 import 'package:flutter_developer_portfolio/introduction.dart';
 import 'package:flutter_developer_portfolio/social_handles.dart';
 
@@ -57,6 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Introduction(),
                     About(),
+                    Experience(),
                   ],
                 ),
               ),
