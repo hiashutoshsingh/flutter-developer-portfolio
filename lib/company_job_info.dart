@@ -25,12 +25,22 @@ class CompanyJobInfo extends StatelessWidget {
             height: 16,
           ),
           _jobRole(
-              'Collaborated with a small team of student designers to spearhead a new brand and design system for Scout’s inaugural student-led design conference at Northeastern'),
+              'Developed and shipped CBO application used by community organization to help manage social risk factors on Android, iOS and Web'),
           SizedBox(
             height: 12,
           ),
           _jobRole(
-              'Collaborated with a small team of student designers to spearhead a new brand and design system for Scout’s inaugural student-led design conference at Northeastern'),
+              'Communicate with multi-disciplinary teams of engineers, designers and product managers on a daily basis'),
+          SizedBox(
+            height: 12,
+          ),
+          _jobRole(
+              'Having multiple discussions and demos within team to explore in flutter and make our existing apps more scalable'),
+          SizedBox(
+            height: 12,
+          ),
+          _jobRole(
+              'Currently working on design system components using flutter which will be used in multiple products in app at Innovaccer'),
         ],
       );
     } else if (selectedIndex == 1) {
@@ -47,12 +57,17 @@ class CompanyJobInfo extends StatelessWidget {
             height: 16,
           ),
           _jobRole(
-              'Collaborated with a small team of student designers to spearhead a new brand and design system for Scout’s inaugural student-led design conference at Northeastern'),
+              'Builded 2.0 version of Zappfresh from Scratch under the mentorship of Tech Lead and Designer by following Agile methods.'),
           SizedBox(
             height: 12,
           ),
           _jobRole(
-              'Collaborated with a small team of student designers to spearhead a new brand and design system for Scout’s inaugural student-led design conference at Northeastern'),
+              'Built and designed basic inventory app using Flutter used by people at various hubs of Zappfresh'),
+          SizedBox(
+            height: 12,
+          ),
+          _jobRole(
+              'Responsible for the design, build, debug & maintenance of current app of Zappfresh'),
         ],
       );
     } else if (selectedIndex == 2) {
@@ -69,12 +84,12 @@ class CompanyJobInfo extends StatelessWidget {
             height: 16,
           ),
           _jobRole(
-              'Collaborated with a small team of student designers to spearhead a new brand and design system for Scout’s inaugural student-led design conference at Northeastern'),
+              'Successfully implemented modules like profile, analytics, Realm and also app connected with server APIs'),
           SizedBox(
             height: 12,
           ),
           _jobRole(
-              'Collaborated with a small team of student designers to spearhead a new brand and design system for Scout’s inaugural student-led design conference at Northeastern'),
+              'Conducted and Organised Startup Events and networking with people'),
         ],
       );
     } else if (selectedIndex == 3) {
@@ -91,12 +106,12 @@ class CompanyJobInfo extends StatelessWidget {
             height: 16,
           ),
           _jobRole(
-              'Collaborated with a small team of student designers to spearhead a new brand and design system for Scout’s inaugural student-led design conference at Northeastern'),
+              'Improved app functionality and logics by writing modular code'),
           SizedBox(
             height: 12,
           ),
           _jobRole(
-              'Collaborated with a small team of student designers to spearhead a new brand and design system for Scout’s inaugural student-led design conference at Northeastern'),
+              'Planned and implemented few modules in current to attract users'),
         ],
       );
     } else {
@@ -114,13 +129,12 @@ class CompanyJobInfo extends StatelessWidget {
           SizedBox(
             height: 16,
           ),
-          _jobRole(
-              'Collaborated with a small team of student designers to spearhead a new brand and design system for Scout’s inaugural student-led design conference at Northeastern'),
+          _jobRole('Successfully Created a Prototype of E-learning app'),
           SizedBox(
             height: 12,
           ),
           _jobRole(
-              'Collaborated with a small team of student designers to spearhead a new brand and design system for Scout’s inaugural student-led design conference at Northeastern'),
+              'Connected with the Local Database using SQLite to handle offline data'),
         ],
       );
     }

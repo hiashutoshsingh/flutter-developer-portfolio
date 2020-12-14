@@ -11,7 +11,7 @@ class Experience extends StatefulWidget {
 class _ExperienceState extends State<Experience> {
   List<String> _companyList;
   List<bool> _companySelected = <bool>[];
-  int _selectedIndex = 0;
+  int _selectedIndex = 4;
 
   @override
   void initState() {
@@ -22,9 +22,11 @@ class _ExperienceState extends State<Experience> {
       'Zappfresh',
       'Innovaccer',
     ];
-    for (int i = 0; i < 5; i++) {
+
+    for (int i = 0; i < 4; i++) {
       _companySelected.add(false);
     }
+    _companySelected.add(true);
     super.initState();
   }
 

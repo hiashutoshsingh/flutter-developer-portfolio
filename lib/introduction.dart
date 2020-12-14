@@ -13,7 +13,7 @@ class Introduction extends StatelessWidget {
             'Hi, my name is',
             style: TextStyle(
               fontWeight: FontWeight.w600,
-              fontSize: 14,
+              fontSize: 16,
               color: Constants.green,
             ),
           ),

@@ -144,7 +144,7 @@ class _SocialHandlesState extends State<SocialHandles> {
             ),
           ),
           SizedBox(
-            height: 32,
+            height: 16,
           ),
         ],
       ),
