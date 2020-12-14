@@ -32,39 +32,63 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           child: Row(
             mainAxisSize: MainAxisSize.max,
-            // crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   SocialHandles(),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 16),
-                    child: Container(
-                      height: 100,
-                      width: 1,
-                      color: Constants.white,
-                    ),
-                  ),
+                  _bottomLine(),
                 ],
               ),
-              SizedBox(
-                width: 128,
-              ),
               Expanded(
-                child: PageView(
-                  scrollDirection: Axis.vertical,
-                  children: [
-                    Introduction(),
-                    About(),
-                    Experience(),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 128),
+                  child: PageView(
+                    scrollDirection: Axis.vertical,
+                    children: [
+                      Introduction(),
+                      About(),
+                      Experience(),
+                    ],
+                  ),
                 ),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  RotatedBox(
+                    quarterTurns: 1,
+                    child: Text(
+                      'ashutoshsingh.0207@gmail.com',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Constants.slate,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  _bottomLine(),
+                ],
               ),
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget _bottomLine() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 16),
+      child: Container(
+        height: 100,
+        width: 1,
+        color: Constants.white,
       ),
     );
   }

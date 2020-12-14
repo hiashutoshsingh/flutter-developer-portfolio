@@ -15,7 +15,7 @@ class CompanyTile extends StatelessWidget {
     return Container(
       color: selected ? Constants.green.withOpacity(.05) : Colors.transparent,
       child: Padding(
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(12.0),
         child: Text(
           val,
           style: TextStyle(
