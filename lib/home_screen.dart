@@ -4,6 +4,7 @@ import 'package:flutter_developer_portfolio/app_bar.dart';
 import 'package:flutter_developer_portfolio/constants.dart';
 import 'package:flutter_developer_portfolio/experience.dart';
 import 'package:flutter_developer_portfolio/introduction.dart';
+import 'package:flutter_developer_portfolio/projects.dart';
 import 'package:flutter_developer_portfolio/social_handles.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -51,6 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Introduction(),
                       About(),
                       Experience(),
+                      Projects(),
                     ],
                   ),
                 ),
