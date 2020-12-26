@@ -54,8 +54,29 @@ class _HomeScreenState extends State<HomeScreen> {
                       About(),
                       Experience(),
                       Projects(),
-                      ProjectShowcase(
-                        title: 'Janhit',
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 48),
+                        child: ProjectShowcase(
+                          title: 'Intellect',
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 48),
+                        child: ProjectShowcase(
+                          title: 'Intellect Dashboard',
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 48),
+                        child: ProjectShowcase(
+                          title: 'Batuni',
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 48),
+                        child: ProjectShowcase(
+                          title: 'Duit',
+                        ),
                       ),
                     ],
                   ),
