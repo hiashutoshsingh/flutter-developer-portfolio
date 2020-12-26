@@ -4,6 +4,7 @@ import 'package:flutter_developer_portfolio/app_bar.dart';
 import 'package:flutter_developer_portfolio/constants.dart';
 import 'package:flutter_developer_portfolio/experience.dart';
 import 'package:flutter_developer_portfolio/introduction.dart';
+import 'package:flutter_developer_portfolio/other_projects.dart';
 import 'package:flutter_developer_portfolio/project_showcase.dart';
 import 'package:flutter_developer_portfolio/projects.dart';
 import 'package:flutter_developer_portfolio/social_handles.dart';
@@ -68,6 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           'Duit provides you to share contact information with anyone to expand your reach.',
                           appUrl:
                               'https://play.google.com/store/apps/details?id=io.duit.ecards'),
+                      OtherProjects(),
                     ],
                   ),
                 ),
