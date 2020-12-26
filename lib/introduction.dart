@@ -43,7 +43,7 @@ class Introduction extends StatelessWidget {
             height: 32,
           ),
           Text(
-            'I am Software Developer based out of India specialized in building mobile apps. \nCurrently I am Fluttering!',
+            'I am a Software Developer based out of India specialized in building mobile apps. \nCurrently I am Fluttering!',
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 16,

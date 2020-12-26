@@ -69,7 +69,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           'Duit provides you to share contact information with anyone to expand your reach.',
                           appUrl:
                               'https://play.google.com/store/apps/details?id=io.duit.ecards'),
-                      OtherProjects(),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 48),
+                        child: OtherProjects(),
+                      ),
                     ],
                   ),
                 ),
