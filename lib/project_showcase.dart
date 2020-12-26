@@ -3,9 +3,11 @@ import 'package:flutter_developer_portfolio/constants.dart';
 
 class ProjectShowcase extends StatefulWidget {
   final String title;
+  final String subTitle;
 
   ProjectShowcase({
     this.title,
+    this.subTitle,
   });
 
   @override
@@ -64,11 +66,21 @@ class _ProjectShowcaseState extends State<ProjectShowcase> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            widget.title,
+            widget.title.toUpperCase(),
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
               color: Constants.white,
+            ),
+          ),
+          SizedBox(
+            height: 4,
+          ),
+          Text(
+            widget.subTitle,
+            style: TextStyle(
+              fontSize: 16,
+              color: Constants.green,
             ),
           ),
           SizedBox(
