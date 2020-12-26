@@ -168,7 +168,8 @@ class _ProjectShowcaseState extends State<ProjectShowcase> {
   Widget _placeholder(String image) {
     return Container(
       padding: EdgeInsets.symmetric(
-          horizontal: widget.title == 'Intellect Dashboard' ? 16 : 0),
+        horizontal: widget.title == 'Intellect Dashboard' ? 16 : 0,
+      ),
       child: Image.asset(
         'asset/$image.png',
       ),
