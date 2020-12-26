@@ -54,30 +54,14 @@ class _HomeScreenState extends State<HomeScreen> {
                       About(),
                       Experience(),
                       Projects(),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 48),
-                        child: ProjectShowcase(
-                          title: 'Intellect',
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 48),
-                        child: ProjectShowcase(
-                          title: 'Intellect Dashboard',
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 48),
-                        child: ProjectShowcase(
-                          title: 'Batuni',
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 48),
-                        child: ProjectShowcase(
-                          title: 'Duit',
-                        ),
-                      ),
+                      _showcaseWidget('Intellect',
+                          'Intellect provides you platform to prepare for UPSC.'),
+                      _showcaseWidget('Intellect Dashboard',
+                          'Dashboard to mange your courses, videos and materials for Intellect app.'),
+                      _showcaseWidget('Batuni',
+                          'Batuni connects you to other users in topic based anonymous audio chats.'),
+                      _showcaseWidget('Duit',
+                          'Duit provides you to share contact information with anyone to expand your reach.'),
                     ],
                   ),
                 ),
@@ -116,6 +100,16 @@ class _HomeScreenState extends State<HomeScreen> {
         height: 100,
         width: 1,
         color: Constants.white,
+      ),
+    );
+  }
+
+  Widget _showcaseWidget(String title, String subtitle) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 48),
+      child: ProjectShowcase(
+        title: title,
+        subTitle: subtitle,
       ),
     );
   }

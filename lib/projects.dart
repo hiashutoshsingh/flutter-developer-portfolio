@@ -20,6 +20,8 @@ class Projects extends StatelessWidget {
           Expanded(
             child: ProjectShowcase(
               title: 'Janhit',
+              subTitle:
+                  'Janhit app provides you information about the Covid 19.',
             ),
           ),
         ],
