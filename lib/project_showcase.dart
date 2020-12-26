@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_developer_portfolio/constants.dart';
 
+import 'common_functions.dart';
+
 class ProjectShowcase extends StatefulWidget {
   final String title;
   final String subTitle;
+  final String githubUrl;
+  final String playStoreUrl;
 
   ProjectShowcase({
     this.title,
     this.subTitle,
+    this.githubUrl,
+    this.playStoreUrl,
   });
 
   @override
@@ -16,9 +22,11 @@ class ProjectShowcase extends StatefulWidget {
 
 class _ProjectShowcaseState extends State<ProjectShowcase> {
   List<Widget> _showcaseList;
+  String _playstore;
 
   @override
   void initState() {
+    _playstore = 'playstore_dark';
     if (widget.title == 'Janhit') {
       _showcaseList = [
         _placeholder('janhit_1'),
@@ -65,13 +73,69 @@ class _ProjectShowcaseState extends State<ProjectShowcase> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            widget.title.toUpperCase(),
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Constants.white,
-            ),
+          Row(
+            children: [
+              Text(
+                widget.title.toUpperCase(),
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
+                  color: Constants.lightestSlate,
+                ),
+              ),
+              SizedBox(
+                width: widget.playStoreUrl != null ? 16 : 0,
+              ),
+              widget.playStoreUrl != null
+                  ? InkWell(
+                      onTap: () {
+                        CommonFunction().openFromUrl(widget.playStoreUrl);
+                      },
+                      onHover: (value) {
+                        if (value) {
+                          setState(() {
+                            _playstore = 'playstore_light';
+                          });
+                        } else {
+                          setState(() {
+                            _playstore = 'playstore_dark';
+                          });
+                        }
+                      },
+                      child: Image.asset(
+                        'asset/$_playstore.png',
+                        width: 16,
+                        height: 16,
+                      ),
+                    )
+                  : Container(),
+              widget.githubUrl != null
+                  ? Padding(
+                      padding: const EdgeInsets.only(left: 16),
+                      child: InkWell(
+                        onTap: () {
+                          CommonFunction().openFromUrl(widget.githubUrl);
+                        },
+                        onHover: (value) {
+                          if (value) {
+                            setState(() {
+                              _playstore = 'github_light';
+                            });
+                          } else {
+                            setState(() {
+                              _playstore = 'github_dark';
+                            });
+                          }
+                        },
+                        child: Image.asset(
+                          'asset/$_playstore.png',
+                          width: 16,
+                          height: 16,
+                        ),
+                      ),
+                    )
+                  : Container(),
+            ],
           ),
           SizedBox(
             height: 4,

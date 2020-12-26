@@ -8,15 +8,24 @@ class SocialHandles extends StatefulWidget {
 }
 
 class _SocialHandlesState extends State<SocialHandles> {
-  String github = 'github_dark';
-  String facebook = 'facebook_dark';
-  String instagram = 'instagram_dark';
-  String linkedin = 'linkedin_dark';
-  String twitter = 'twitter_dark';
+  String github;
+
+  String facebook;
+
+  String instagram;
+
+  String linkedin;
+
+  String twitter;
 
   @override
   void initState() {
     super.initState();
+    github = 'github_dark';
+    facebook = 'facebook_dark';
+    instagram = 'instagram_dark';
+    linkedin = 'linkedin_dark';
+    twitter = 'twitter_dark';
   }
 
   @override
