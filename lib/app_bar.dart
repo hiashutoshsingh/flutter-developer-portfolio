@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_developer_portfolio/constants.dart';
 
 class WebAppBar extends StatelessWidget {
+  final Function(int) pageCallback;
+
+  WebAppBar({
+    this.pageCallback,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,29 +17,48 @@ class WebAppBar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              'A',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 24,
-                color: Constants.green,
+            InkWell(
+              onTap: () {
+                pageCallback(0);
+              },
+              child: Text(
+                'A',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                  color: Constants.green,
+                ),
               ),
             ),
             Row(
               children: [
-                _appBarItem('1', 'About'),
+                InkWell(
+                  onTap: () {
+                    pageCallback(1);
+                  },
+                  child: _appBarItem('1', 'About'),
+                ),
                 SizedBox(
                   width: 32,
                 ),
-                _appBarItem('2', 'Experience'),
+                InkWell(
+                  onTap: () {
+                    pageCallback(2);
+                  },
+                  child: _appBarItem('2', 'Experience'),
+                ),
                 SizedBox(
                   width: 32,
                 ),
-                _appBarItem('3', 'Work'),
+                InkWell(
+                  onTap: () {
+                    pageCallback(3);
+                  },
+                  child: _appBarItem('3', 'Work'),
+                ),
                 SizedBox(
                   width: 32,
                 ),
-                _appBarItem('4', 'Contact'),
               ],
             ),
           ],

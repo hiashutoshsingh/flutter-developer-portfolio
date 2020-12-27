@@ -65,11 +65,11 @@ class _OtherProjectsState extends State<OtherProjects> {
               scrollDirection: Axis.horizontal,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: .6,
+                childAspectRatio: .7,
               ),
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: EdgeInsets.only(right: 32, bottom: 16),
+                  padding: EdgeInsets.only(right: 32, bottom: 32),
                   child: Container(
                     decoration: BoxDecoration(
                       color: Constants.lightNavy,
