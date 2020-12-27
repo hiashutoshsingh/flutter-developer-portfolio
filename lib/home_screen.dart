@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_developer_portfolio/about.dart';
 import 'package:flutter_developer_portfolio/app_bar.dart';
+import 'package:flutter_developer_portfolio/common_functions.dart';
 import 'package:flutter_developer_portfolio/constants.dart';
 import 'package:flutter_developer_portfolio/experience.dart';
 import 'package:flutter_developer_portfolio/introduction.dart';
@@ -15,9 +16,17 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  PageController _pageController;
+  bool _emailHover;
+
   @override
   void initState() {
     super.initState();
+    _emailHover = false;
+    _pageController = PageController(
+      keepPage: true,
+      viewportFraction: 1,
+    );
   }
 
   @override
@@ -26,7 +35,17 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Constants.navy,
       appBar: AppBar(
         backgroundColor: Constants.navy,
-        title: WebAppBar(),
+        shadowColor: Constants.green.withOpacity(0.5),
+        elevation: 10,
+        title: WebAppBar(
+          pageCallback: (pageNumber) {
+            _pageController.animateToPage(
+              pageNumber,
+              curve: Curves.easeIn,
+              duration: Duration(milliseconds: 800),
+            );
+          },
+        ),
       ),
       body: Container(
         child: Padding(
@@ -50,11 +69,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 128),
                   child: PageView(
                     scrollDirection: Axis.vertical,
+                    controller: _pageController,
                     children: [
                       Introduction(),
                       About(),
                       Experience(),
-                      Projects(),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 48),
+                        child: Projects(),
+                      ),
                       _showcaseWidget('Intellect',
                           'Intellect provides you platform to prepare for UPSC.',
                           appUrl:
@@ -83,11 +106,28 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   RotatedBox(
                     quarterTurns: 1,
-                    child: Text(
-                      'ashutoshsingh.0207@gmail.com',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Constants.slate,
+                    child: InkWell(
+                      onTap: () {
+                        CommonFunction().openMail();
+                      },
+                      onHover: (val) {
+                        if (val) {
+                          setState(() {
+                            _emailHover = true;
+                          });
+                        } else {
+                          setState(() {
+                            _emailHover = false;
+                          });
+                        }
+                      },
+                      child: Text(
+                        'ashutoshsingh.0207@gmail.com',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color:
+                              _emailHover ? Constants.green : Constants.slate,
+                        ),
                       ),
                     ),
                   ),
