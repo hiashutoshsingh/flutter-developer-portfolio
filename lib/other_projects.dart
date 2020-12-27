@@ -28,7 +28,7 @@ class _OtherProjectsState extends State<OtherProjects> {
     _subTitleOtherProject = [
       'It showcase examples of all types of widgets used for animation in Flutter.',
       'List of all the flutter ui screens.',
-      'It is clone of the Netlfix app calling api pf Movie api.',
+      'It is clone of the Netlfix app calling api of Movie api.',
       'News app calling api of newapi.org.',
     ];
     _link = [
@@ -65,16 +65,14 @@ class _OtherProjectsState extends State<OtherProjects> {
               scrollDirection: Axis.horizontal,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: .7,
+                childAspectRatio: .6,
               ),
               itemBuilder: (context, index) {
                 return Padding(
                   padding: EdgeInsets.only(right: 32, bottom: 32),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Constants.lightNavy,
-                      borderRadius: BorderRadius.circular(6),
-                    ),
+                  child: Card(
+                    color: Constants.lightNavy,
+                    elevation: 5,
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
                       child: Column(

@@ -13,7 +13,7 @@ class CommonFunction {
   void openMail() {
     Uri _emailLaunchUri = Uri(
       scheme: 'mailto',
-      path: 'ashutoshsingh.0207@gmail.com',
+      path: 'hiashutoshkumarsingh@gmail.com',
     );
 
     launch(_emailLaunchUri.toString());
