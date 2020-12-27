@@ -14,10 +14,34 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png"/>
 
-    <title>flutter_developer_portfolio</title>
+    <title>Ashutosh Singh</title>
     <link rel="manifest" href="manifest.json">
 </head>
 <body>
+
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-storage.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyBpBt1RS7oiPtndT9q8KTForOyiuw_B2ro",
+    authDomain: "portfolio-b1887.firebaseapp.com",
+    projectId: "portfolio-b1887",
+    storageBucket: "portfolio-b1887.appspot.com",
+    messagingSenderId: "695521873712",
+    appId: "1:695521873712:web:713c5f1d8547878351c2f5",
+    measurementId: "G-CGDRMBPHQ7"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+</script>
 <!-- This script installs service_worker.js to provide PWA functionality to
      application. For more information, see:
      https://developers.google.com/web/fundamentals/primers/service-workers -->
@@ -27,6 +51,7 @@
         navigator.serviceWorker.register('flutter_service_worker.js');
       });
     }
+
 
 </script>
 <script src="main.dart.js?version=1" type="application/javascript"></script>
