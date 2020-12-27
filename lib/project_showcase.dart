@@ -91,21 +91,16 @@ class _ProjectShowcaseState extends State<ProjectShowcase> {
                       onTap: () {
                         CommonFunction().openFromUrl(widget.playStoreUrl);
                       },
-                      onHover: (value) {
-                        if (value) {
-                          setState(() {
-                            _playstore = 'playstore_light';
-                          });
-                        } else {
-                          setState(() {
-                            _playstore = 'playstore_dark';
-                          });
-                        }
-                      },
-                      child: Image.asset(
-                        'asset/$_playstore.png',
-                        width: 16,
-                        height: 16,
+                      child: Card(
+                        shadowColor: Constants.green,
+                        color: Constants.navy,
+                        elevation: 5,
+                        child: Image.asset(
+                          'asset/google_play.png',
+                          fit: BoxFit.fill,
+                          width: 130,
+                          height: 36,
+                        ),
                       ),
                     )
                   : Container(),
@@ -138,7 +133,7 @@ class _ProjectShowcaseState extends State<ProjectShowcase> {
             ],
           ),
           SizedBox(
-            height: 4,
+            height: 6,
           ),
           Text(
             widget.subTitle,

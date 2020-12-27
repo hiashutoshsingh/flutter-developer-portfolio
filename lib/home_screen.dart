@@ -51,27 +51,30 @@ class _HomeScreenState extends State<HomeScreen> {
         child: CommonFunction().isMWeb(context)
             ? Container(
                 child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Image.asset(
-                        'asset/soon.png',
-                        height: 300,
-                        width: 500,
-                      ),
-                      SizedBox(
-                        height: 32,
-                      ),
-                      Text(
-                        'Mobile version is coming Soon!',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          fontSize: 36,
-                          color: Constants.slate,
+                  child: Padding(
+                    padding: const EdgeInsets.all(32.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Image.asset(
+                          'asset/soon.png',
+                          height: 300,
+                          width: 500,
                         ),
-                      ),
-                    ],
+                        SizedBox(
+                          height: 32,
+                        ),
+                        Text(
+                          'Mobile version is coming Soon!',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            fontSize: 36,
+                            color: Constants.slate,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               )
@@ -149,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               }
                             },
                             child: Text(
-                              'ashutoshsingh.0207@gmail.com',
+                              'hiashutoshkumarsingh@gmail.com',
                               style: TextStyle(
                                 fontSize: 16,
                                 color: _emailHover
