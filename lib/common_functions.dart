@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CommonFunction {
@@ -16,5 +17,14 @@ class CommonFunction {
     );
 
     launch(_emailLaunchUri.toString());
+  }
+
+  bool isMWeb(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    if (width > 800) {
+      return false;
+    } else {
+      return true;
+    }
   }
 }
