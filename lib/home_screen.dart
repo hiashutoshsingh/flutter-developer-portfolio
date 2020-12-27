@@ -48,98 +48,126 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: Container(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 48,
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  SocialHandles(),
-                  _bottomLine(),
-                ],
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 128),
-                  child: PageView(
-                    scrollDirection: Axis.vertical,
-                    controller: _pageController,
+        child: CommonFunction().isMWeb(context)
+            ? Container(
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      Introduction(),
-                      About(),
-                      Experience(),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 48),
-                        child: Projects(),
+                      Image.asset(
+                        'asset/soon.png',
+                        height: 300,
+                        width: 500,
                       ),
-                      _showcaseWidget('Intellect',
-                          'Intellect provides you platform to prepare for UPSC.',
-                          appUrl:
-                              'https://play.google.com/store/apps/details?id=com.intellectias.gradeupProto'),
-                      _showcaseWidget('Intellect Dashboard',
-                          'Dashboard to mange your courses, videos, tests and materials for Intellect app.'),
-                      _showcaseWidget('Batuni',
-                          'Batuni connects you to other users in topic based anonymous audio chats.',
-                          appUrl:
-                              'https://play.google.com/store/apps/details?id=app.batuni'),
-                      _showcaseWidget('Duit',
-                          'Duit provides you to share contact information with anyone to expand your reach.',
-                          appUrl:
-                              'https://play.google.com/store/apps/details?id=io.duit.ecards'),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 48),
-                        child: OtherProjects(),
+                      SizedBox(
+                        height: 32,
+                      ),
+                      Text(
+                        'Mobile version is coming Soon!',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          fontSize: 36,
+                          color: Constants.slate,
+                        ),
                       ),
                     ],
                   ),
                 ),
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  RotatedBox(
-                    quarterTurns: 1,
-                    child: InkWell(
-                      onTap: () {
-                        CommonFunction().openMail();
-                      },
-                      onHover: (val) {
-                        if (val) {
-                          setState(() {
-                            _emailHover = true;
-                          });
-                        } else {
-                          setState(() {
-                            _emailHover = false;
-                          });
-                        }
-                      },
-                      child: Text(
-                        'ashutoshsingh.0207@gmail.com',
-                        style: TextStyle(
-                          fontSize: 16,
-                          color:
-                              _emailHover ? Constants.green : Constants.slate,
+              )
+            : Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 48,
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        SocialHandles(),
+                        _bottomLine(),
+                      ],
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 128),
+                        child: PageView(
+                          scrollDirection: Axis.vertical,
+                          controller: _pageController,
+                          children: [
+                            Introduction(),
+                            About(),
+                            Experience(),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 48),
+                              child: Projects(),
+                            ),
+                            _showcaseWidget('Intellect',
+                                'Intellect provides you platform to prepare for UPSC.',
+                                appUrl:
+                                    'https://play.google.com/store/apps/details?id=com.intellectias.gradeupProto'),
+                            _showcaseWidget('Intellect Dashboard',
+                                'Dashboard to mange your courses, videos, tests and materials for Intellect app.'),
+                            _showcaseWidget('Batuni',
+                                'Batuni connects you to other users in topic based anonymous audio chats.',
+                                appUrl:
+                                    'https://play.google.com/store/apps/details?id=app.batuni'),
+                            _showcaseWidget('Duit',
+                                'Duit provides you to share contact information with anyone to expand your reach.',
+                                appUrl:
+                                    'https://play.google.com/store/apps/details?id=io.duit.ecards'),
+                            Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 48),
+                              child: OtherProjects(),
+                            ),
+                          ],
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  _bottomLine(),
-                ],
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        RotatedBox(
+                          quarterTurns: 1,
+                          child: InkWell(
+                            onTap: () {
+                              CommonFunction().openMail();
+                            },
+                            onHover: (val) {
+                              if (val) {
+                                setState(() {
+                                  _emailHover = true;
+                                });
+                              } else {
+                                setState(() {
+                                  _emailHover = false;
+                                });
+                              }
+                            },
+                            child: Text(
+                              'ashutoshsingh.0207@gmail.com',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: _emailHover
+                                    ? Constants.green
+                                    : Constants.slate,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        _bottomLine(),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ],
-          ),
-        ),
       ),
     );
   }

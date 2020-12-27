@@ -22,10 +22,10 @@ class WebAppBar extends StatelessWidget {
                 pageCallback(0);
               },
               child: Text(
-                'A',
+                'A.',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 24,
+                  fontSize: 32,
                   color: Constants.green,
                 ),
               ),
