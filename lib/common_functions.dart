@@ -19,7 +19,7 @@ class CommonFunction {
     launch(_emailLaunchUri.toString());
   }
 
-  bool isMWeb(BuildContext context) {
+  bool app(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     if (width > 800) {
       return false;
