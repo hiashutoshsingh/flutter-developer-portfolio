@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_developer_portfolio/constants.dart';
 import 'package:flutter_developer_portfolio/sub_header.dart';
 
+import 'common_functions.dart';
+
 class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class About extends StatelessWidget {
           Text(
             "Hello! I'm Ashutosh, a software developer based in India.",
             style: TextStyle(
-              fontSize: 16,
+              fontSize: CommonFunction().app(context) ? 18 : 16,
               color: Constants.slate,
             ),
           ),
@@ -30,7 +32,7 @@ class About extends StatelessWidget {
           Text(
             'I am currently developing mobile apps using Flutter and has delivered 10+ projects in mobile and web. \nI am currently working as Software Developer at Innovaccer and also do some side projects to enhance my skills in mobile.',
             style: TextStyle(
-              fontSize: 16,
+              fontSize: CommonFunction().app(context) ? 18 : 16,
               color: Constants.slate,
             ),
           ),
@@ -40,7 +42,7 @@ class About extends StatelessWidget {
           Text(
             'I also love to produce music beats, investing sometime in learning and making beats using Fl Studio.',
             style: TextStyle(
-              fontSize: 16,
+              fontSize: CommonFunction().app(context) ? 18 : 16,
               color: Constants.slate,
             ),
           ),
@@ -50,7 +52,7 @@ class About extends StatelessWidget {
           Text(
             "Some technologies which I have worked on are:",
             style: TextStyle(
-              fontSize: 16,
+              fontSize: CommonFunction().app(context) ? 18 : 16,
               color: Constants.slate,
             ),
           ),
@@ -62,15 +64,15 @@ class About extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _techItem('Flutter'),
+                  _techItem('Flutter', context),
                   SizedBox(
                     height: 12,
                   ),
-                  _techItem('Android'),
+                  _techItem('Android', context),
                   SizedBox(
                     height: 12,
                   ),
-                  _techItem('JavaScript'),
+                  _techItem('JavaScript', context),
                 ],
               ),
               SizedBox(
@@ -79,15 +81,15 @@ class About extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  _techItem('Flutter-Web'),
+                  _techItem('Flutter-Web', context),
                   SizedBox(
                     height: 12,
                   ),
-                  _techItem('iOS'),
+                  _techItem('iOS', context),
                   SizedBox(
                     height: 12,
                   ),
-                  _techItem('React Native'),
+                  _techItem('React Native', context),
                 ],
               ),
             ],
@@ -97,12 +99,12 @@ class About extends StatelessWidget {
     );
   }
 
-  Widget _techItem(String value) {
+  Widget _techItem(String value, BuildContext context) {
     return Row(
       children: [
         Icon(
           Icons.ac_unit_sharp,
-          size: 16,
+          size: CommonFunction().app(context) ? 20 : 16,
           color: Constants.green,
         ),
         SizedBox(
@@ -111,7 +113,7 @@ class About extends StatelessWidget {
         Text(
           value,
           style: TextStyle(
-            fontSize: 16,
+            fontSize: CommonFunction().app(context) ? 18 : 16,
             color: Constants.slate,
           ),
         ),
