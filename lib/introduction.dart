@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_developer_portfolio/common_functions.dart';
 import 'package:flutter_developer_portfolio/constants.dart';
 
 class Introduction extends StatelessWidget {
@@ -13,7 +14,7 @@ class Introduction extends StatelessWidget {
             'Hi, my name is',
             style: TextStyle(
               fontWeight: FontWeight.w600,
-              fontSize: 16,
+              fontSize: CommonFunction().isApp(context) ? 24 : 16,
               color: Constants.green,
             ),
           ),
@@ -24,7 +25,7 @@ class Introduction extends StatelessWidget {
             'Ashutosh Singh.',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 64,
+              fontSize: CommonFunction().isApp(context) ? 48 : 64,
               color: Constants.white,
             ),
           ),
@@ -35,7 +36,7 @@ class Introduction extends StatelessWidget {
             'I build mobile apps.',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 64,
+              fontSize: CommonFunction().isApp(context) ? 48 : 64,
               color: Constants.lightSlate,
             ),
           ),

@@ -1,14 +1,17 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_developer_portfolio/about.dart';
-import 'package:flutter_developer_portfolio/app_bar.dart';
+import 'package:flutter_developer_portfolio/app_home_body.dart';
 import 'package:flutter_developer_portfolio/common_functions.dart';
 import 'package:flutter_developer_portfolio/constants.dart';
 import 'package:flutter_developer_portfolio/experience.dart';
 import 'package:flutter_developer_portfolio/introduction.dart';
+import 'package:flutter_developer_portfolio/mobile_app_bar.dart';
 import 'package:flutter_developer_portfolio/other_projects.dart';
 import 'package:flutter_developer_portfolio/project_showcase.dart';
 import 'package:flutter_developer_portfolio/projects.dart';
 import 'package:flutter_developer_portfolio/social_handles.dart';
+import 'package:flutter_developer_portfolio/web_app_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -18,6 +21,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   PageController _pageController;
   bool _emailHover;
+  double _appBarHeight;
 
   @override
   void initState() {
@@ -33,50 +37,53 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Constants.navy,
+      bottomNavigationBar: CommonFunction().isApp(context)
+          ? SafeArea(
+              child: Padding(
+                padding: EdgeInsets.all(
+                  kIsWeb ? 8.0 : 0,
+                ),
+                child: SocialHandles(),
+              ),
+            )
+          : Container(),
       appBar: AppBar(
         backgroundColor: Constants.navy,
         shadowColor: Constants.green.withOpacity(0.5),
         elevation: 10,
-        title: WebAppBar(
-          pageCallback: (pageNumber) {
-            _pageController.animateToPage(
-              pageNumber,
-              curve: Curves.easeIn,
-              duration: Duration(milliseconds: 800),
-            );
-          },
-        ),
+        toolbarHeight: _appBarHeight,
+        title: CommonFunction().isApp(context)
+            ? MobileAppBar(
+                appBarClick: (isToggled, item) {
+                  setState(() {
+                    if (isToggled)
+                      _appBarHeight = 160;
+                    else
+                      _appBarHeight = null;
+                  });
+                  if (item != -1) {
+                    _pageController.animateToPage(
+                      item,
+                      curve: Curves.easeIn,
+                      duration: Duration(milliseconds: 800),
+                    );
+                  }
+                },
+              )
+            : WebAppBar(
+                pageCallback: (pageNumber) {
+                  _pageController.animateToPage(
+                    pageNumber,
+                    curve: Curves.easeIn,
+                    duration: Duration(milliseconds: 800),
+                  );
+                },
+              ),
       ),
       body: Container(
-        child: CommonFunction().isMWeb(context)
-            ? Container(
-                child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(32.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Image.asset(
-                          'asset/soon.png',
-                          height: 300,
-                          width: 500,
-                        ),
-                        SizedBox(
-                          height: 32,
-                        ),
-                        Text(
-                          'Mobile version is coming Soon!',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 36,
-                            color: Constants.slate,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+        child: CommonFunction().isApp(context)
+            ? AppHomeBody(
+                pageController: _pageController,
               )
             : Padding(
                 padding: const EdgeInsets.symmetric(

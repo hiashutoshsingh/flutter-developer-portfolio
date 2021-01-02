@@ -22,7 +22,7 @@ class WebAppBar extends StatelessWidget {
                 pageCallback(0);
               },
               child: Text(
-                'A.',
+                'Ashutosh.'.toUpperCase(),
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 32,
@@ -36,7 +36,11 @@ class WebAppBar extends StatelessWidget {
                   onTap: () {
                     pageCallback(1);
                   },
-                  child: _appBarItem('1', 'About'),
+                  child: _appBarItem(
+                    '1',
+                    'About',
+                    Icons.info_outline,
+                  ),
                 ),
                 SizedBox(
                   width: 32,
@@ -45,7 +49,11 @@ class WebAppBar extends StatelessWidget {
                   onTap: () {
                     pageCallback(2);
                   },
-                  child: _appBarItem('2', 'Experience'),
+                  child: _appBarItem(
+                    '2',
+                    'Experience',
+                    Icons.work_outline,
+                  ),
                 ),
                 SizedBox(
                   width: 32,
@@ -54,7 +62,11 @@ class WebAppBar extends StatelessWidget {
                   onTap: () {
                     pageCallback(3);
                   },
-                  child: _appBarItem('3', 'Work'),
+                  child: _appBarItem(
+                    '3',
+                    'Work',
+                    Icons.build,
+                  ),
                 ),
                 SizedBox(
                   width: 32,
@@ -67,19 +79,16 @@ class WebAppBar extends StatelessWidget {
     );
   }
 
-  Widget _appBarItem(String number, String item) {
+  Widget _appBarItem(String number, String item, IconData iconData) {
     return Row(
       children: [
-        Text(
-          '$number.',
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 16,
-            color: Color(0xff64ffda),
-          ),
+        Icon(
+          iconData,
+          size: 20,
+          color: Constants.green,
         ),
         SizedBox(
-          width: 6,
+          width: 8,
         ),
         Text(
           '$item',
