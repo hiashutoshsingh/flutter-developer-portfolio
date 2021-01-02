@@ -71,7 +71,7 @@ class _OtherProjectsState extends State<OtherProjects> {
                 return Padding(
                   padding: EdgeInsets.only(
                     right: CommonFunction().isApp(context) ? 16 : 32,
-                    bottom: CommonFunction().isApp(context) ? 48 : 32,
+                    bottom: CommonFunction().isApp(context) ? 44 : 32,
                   ),
                   child: Card(
                     color: Constants.lightNavy,
