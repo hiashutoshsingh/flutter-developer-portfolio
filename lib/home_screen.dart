@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: SocialHandles(),
               ),
             )
-          : Container(),
+          : null,
       appBar: AppBar(
         backgroundColor: Constants.navy,
         shadowColor: Constants.green.withOpacity(0.5),
