@@ -138,7 +138,7 @@ class _ProjectShowcaseState extends State<ProjectShowcase> {
           Text(
             widget.subTitle,
             style: TextStyle(
-              fontSize: 16,
+              fontSize: CommonFunction().isApp(context) ? 18 : 16,
               color: Constants.green,
             ),
           ),
