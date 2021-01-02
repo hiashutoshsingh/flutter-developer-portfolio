@@ -9,11 +9,18 @@ import 'package:flutter_developer_portfolio/projects.dart';
 import 'other_projects.dart';
 
 class AppHomeBody extends StatelessWidget {
+  PageController pageController;
+
+  AppHomeBody({
+    this.pageController,
+  });
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: PageView(
         scrollDirection: Axis.vertical,
+        controller: pageController,
         children: [
           Padding(
             padding: const EdgeInsets.only(

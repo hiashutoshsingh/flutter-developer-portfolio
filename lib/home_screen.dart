@@ -50,7 +50,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     else
                       _appBarHeight = null;
                   });
-                  print('appBarClick $item');
+                  if (item != -1) {
+                    _pageController.animateToPage(
+                      item,
+                      curve: Curves.easeIn,
+                      duration: Duration(milliseconds: 800),
+                    );
+                  }
                 },
               )
             : WebAppBar(
@@ -65,7 +71,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Container(
         child: CommonFunction().isApp(context)
-            ? AppHomeBody()
+            ? AppHomeBody(
+                pageController: _pageController,
+              )
             : Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 48,

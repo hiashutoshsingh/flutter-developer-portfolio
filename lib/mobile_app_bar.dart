@@ -30,12 +30,15 @@ class _MobileAppBarState extends State<MobileAppBar> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Ashutosh.',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 32,
-                color: Constants.green,
+            InkWell(
+              onTap: () => widget.appBarClick(_toggle, 0),
+              child: Text(
+                'Ashutosh.',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 32,
+                  color: Constants.green,
+                ),
               ),
             ),
             InkWell(
@@ -73,9 +76,21 @@ class _MobileAppBarState extends State<MobileAppBar> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _appBarItem('About', 0),
-                    _appBarItem('Experience', 1),
-                    _appBarItem('Work', 2),
+                    _appBarItem(
+                      'About',
+                      1,
+                      Icons.info_outline,
+                    ),
+                    _appBarItem(
+                      'Experience',
+                      2,
+                      Icons.work_outline,
+                    ),
+                    _appBarItem(
+                      'Work',
+                      3,
+                      Icons.build,
+                    ),
                   ],
                 ),
               )
@@ -84,7 +99,7 @@ class _MobileAppBarState extends State<MobileAppBar> {
     );
   }
 
-  Widget _appBarItem(String title, int item) {
+  Widget _appBarItem(String title, int item, IconData icon) {
     return InkWell(
       onTap: () {
         setState(() {
@@ -94,15 +109,27 @@ class _MobileAppBarState extends State<MobileAppBar> {
       },
       child: Padding(
         padding: const EdgeInsets.only(
-          bottom: 8,
+          bottom: 12,
         ),
-        child: Text(
-          'Ashutosh.',
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 20,
-            color: Constants.green,
-          ),
+        child: Row(
+          children: [
+            Icon(
+              icon,
+              size: 24,
+              color: Constants.green.withOpacity(0.8),
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            Text(
+              title,
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 20,
+                color: Constants.slate,
+              ),
+            ),
+          ],
         ),
       ),
     );
