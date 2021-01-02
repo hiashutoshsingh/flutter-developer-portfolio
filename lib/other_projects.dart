@@ -65,11 +65,14 @@ class _OtherProjectsState extends State<OtherProjects> {
               scrollDirection: Axis.horizontal,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: .6,
+                childAspectRatio: CommonFunction().isApp(context) ? .9 : .6,
               ),
               itemBuilder: (context, index) {
                 return Padding(
-                  padding: EdgeInsets.only(right: 32, bottom: 32),
+                  padding: EdgeInsets.only(
+                    right: CommonFunction().isApp(context) ? 16 : 32,
+                    bottom: CommonFunction().isApp(context) ? 48 : 32,
+                  ),
                   child: Card(
                     color: Constants.lightNavy,
                     elevation: 5,
@@ -97,8 +100,10 @@ class _OtherProjectsState extends State<OtherProjects> {
                                 hoverColor: Colors.transparent,
                                 child: Image.asset(
                                   'asset/github_dark.png',
-                                  width: 16,
-                                  height: 16,
+                                  width:
+                                      CommonFunction().isApp(context) ? 24 : 16,
+                                  height:
+                                      CommonFunction().isApp(context) ? 24 : 16,
                                 ),
                               ),
                             ],
@@ -109,7 +114,8 @@ class _OtherProjectsState extends State<OtherProjects> {
                           Text(
                             _titleOtherProject[index],
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize:
+                                  CommonFunction().isApp(context) ? 20 : 16,
                               fontWeight: FontWeight.w600,
                               color: Constants.white,
                             ),
@@ -120,7 +126,8 @@ class _OtherProjectsState extends State<OtherProjects> {
                           Text(
                             _subTitleOtherProject[index],
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize:
+                                  CommonFunction().isApp(context) ? 18 : 16,
                               color: Constants.lightestSlate,
                             ),
                           ),

@@ -79,7 +79,11 @@ class AppHomeBody extends StatelessWidget {
                     'https://play.google.com/store/apps/details?id=io.duit.ecards'),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 48),
+            padding: EdgeInsets.only(
+              left: CommonFunction().isApp(context) ? 8 : 0,
+              top: 48,
+              bottom: 48,
+            ),
             child: OtherProjects(),
           ),
         ],
