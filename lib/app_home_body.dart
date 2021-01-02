@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_developer_portfolio/about.dart';
+import 'package:flutter_developer_portfolio/common_functions.dart';
 import 'package:flutter_developer_portfolio/experience.dart';
 import 'package:flutter_developer_portfolio/introduction.dart';
 import 'package:flutter_developer_portfolio/project_showcase.dart';
@@ -36,23 +37,47 @@ class AppHomeBody extends StatelessWidget {
             child: Experience(),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 48),
+            padding: EdgeInsets.only(
+              left: CommonFunction().isApp(context) ? 8 : 0,
+              top: 48,
+              bottom: 48,
+            ),
             child: Projects(),
           ),
-          _showcaseWidget('Intellect',
-              'Intellect provides you platform to prepare for UPSC.',
-              appUrl:
-                  'https://play.google.com/store/apps/details?id=com.intellectias.gradeupProto'),
-          _showcaseWidget('Intellect Dashboard',
-              'Dashboard to mange your courses, videos, tests and materials for Intellect app.'),
-          _showcaseWidget('Batuni',
-              'Batuni connects you to other users in topic based anonymous audio chats.',
-              appUrl:
-                  'https://play.google.com/store/apps/details?id=app.batuni'),
-          _showcaseWidget('Duit',
-              'Duit provides you to share contact information with anyone to expand your reach.',
-              appUrl:
-                  'https://play.google.com/store/apps/details?id=io.duit.ecards'),
+          Padding(
+            padding: EdgeInsets.only(
+              left: CommonFunction().isApp(context) ? 8 : 0,
+            ),
+            child: _showcaseWidget('Intellect',
+                'Intellect provides you platform to prepare for UPSC.',
+                appUrl:
+                    'https://play.google.com/store/apps/details?id=com.intellectias.gradeupProto'),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: CommonFunction().isApp(context) ? 8 : 0,
+            ),
+            child: _showcaseWidget('Intellect Dashboard',
+                'Dashboard to mange your courses, videos, tests and materials for Intellect app.'),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: CommonFunction().isApp(context) ? 8 : 0,
+            ),
+            child: _showcaseWidget('Batuni',
+                'Batuni connects you to other users in topic based anonymous audio chats.',
+                appUrl:
+                    'https://play.google.com/store/apps/details?id=app.batuni'),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: CommonFunction().isApp(context) ? 8 : 0,
+            ),
+            child: _showcaseWidget('Duit',
+                'Duit provides you to share contact information with anyone to expand your reach.',
+                appUrl:
+                    'https://play.google.com/store/apps/details?id=io.duit.ecards'),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 48),
             child: OtherProjects(),
