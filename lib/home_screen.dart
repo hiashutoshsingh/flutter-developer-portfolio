@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_developer_portfolio/about.dart';
-import 'package:flutter_developer_portfolio/app_bar.dart';
 import 'package:flutter_developer_portfolio/app_home_body.dart';
 import 'package:flutter_developer_portfolio/common_functions.dart';
 import 'package:flutter_developer_portfolio/constants.dart';
@@ -11,6 +10,7 @@ import 'package:flutter_developer_portfolio/other_projects.dart';
 import 'package:flutter_developer_portfolio/project_showcase.dart';
 import 'package:flutter_developer_portfolio/projects.dart';
 import 'package:flutter_developer_portfolio/social_handles.dart';
+import 'package:flutter_developer_portfolio/web_app_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
