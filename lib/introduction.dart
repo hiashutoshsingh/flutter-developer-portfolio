@@ -14,7 +14,7 @@ class Introduction extends StatelessWidget {
             'Hi, my name is',
             style: TextStyle(
               fontWeight: FontWeight.w600,
-              fontSize: CommonFunction().app(context) ? 24 : 16,
+              fontSize: CommonFunction().isApp(context) ? 24 : 16,
               color: Constants.green,
             ),
           ),
@@ -25,7 +25,7 @@ class Introduction extends StatelessWidget {
             'Ashutosh Singh.',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: CommonFunction().app(context) ? 48 : 64,
+              fontSize: CommonFunction().isApp(context) ? 48 : 64,
               color: Constants.white,
             ),
           ),
@@ -36,7 +36,7 @@ class Introduction extends StatelessWidget {
             'I build mobile apps.',
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: CommonFunction().app(context) ? 48 : 64,
+              fontSize: CommonFunction().isApp(context) ? 48 : 64,
               color: Constants.lightSlate,
             ),
           ),

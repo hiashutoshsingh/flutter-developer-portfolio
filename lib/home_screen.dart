@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
         shadowColor: Constants.green.withOpacity(0.5),
         elevation: 10,
         toolbarHeight: _appBarHeight,
-        title: CommonFunction().app(context)
+        title: CommonFunction().isApp(context)
             ? MobileAppBar(
                 appBarClick: (isToggled, item) {
                   setState(() {
@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
       ),
       body: Container(
-        child: CommonFunction().app(context)
+        child: CommonFunction().isApp(context)
             ? AppHomeBody()
             : Padding(
                 padding: const EdgeInsets.symmetric(
