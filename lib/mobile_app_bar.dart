@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_developer_portfolio/constants.dart';
 
@@ -115,7 +116,7 @@ class _MobileAppBarState extends State<MobileAppBar> {
           children: [
             Icon(
               icon,
-              size: 24,
+              size: kIsWeb ? 20 : 24,
               color: Constants.green.withOpacity(0.8),
             ),
             SizedBox(
@@ -125,7 +126,7 @@ class _MobileAppBarState extends State<MobileAppBar> {
               title,
               style: TextStyle(
                 fontWeight: FontWeight.w600,
-                fontSize: 20,
+                fontSize: kIsWeb ? 16 : 20,
                 color: Constants.slate,
               ),
             ),

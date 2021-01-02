@@ -31,21 +31,21 @@ class AppHomeBody extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(
-              left: 8,
-              right: 4,
+              left: 16,
+              right: 16,
             ),
             child: About(),
           ),
           Padding(
             padding: const EdgeInsets.only(
-              left: 8,
-              right: 4,
+              left: 16,
+              right: 16,
             ),
             child: Experience(),
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: CommonFunction().isApp(context) ? 8 : 0,
+              left: CommonFunction().isApp(context) ? 16 : 0,
               top: 48,
               bottom: 48,
             ),
@@ -53,7 +53,7 @@ class AppHomeBody extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: CommonFunction().isApp(context) ? 8 : 0,
+              left: CommonFunction().isApp(context) ? 16 : 0,
             ),
             child: _showcaseWidget('Intellect',
                 'Intellect provides you platform to prepare for UPSC.',
@@ -62,14 +62,14 @@ class AppHomeBody extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: CommonFunction().isApp(context) ? 8 : 0,
+              left: CommonFunction().isApp(context) ? 16 : 0,
             ),
             child: _showcaseWidget('Intellect Dashboard',
                 'Dashboard to mange your courses, videos, tests and materials for Intellect app.'),
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: CommonFunction().isApp(context) ? 8 : 0,
+              left: CommonFunction().isApp(context) ? 16 : 0,
             ),
             child: _showcaseWidget('Batuni',
                 'Batuni connects you to other users in topic based anonymous audio chats.',
@@ -78,7 +78,7 @@ class AppHomeBody extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: CommonFunction().isApp(context) ? 8 : 0,
+              left: CommonFunction().isApp(context) ? 16 : 0,
             ),
             child: _showcaseWidget('Duit',
                 'Duit provides you to share contact information with anyone to expand your reach.',
@@ -87,7 +87,7 @@ class AppHomeBody extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: CommonFunction().isApp(context) ? 8 : 0,
+              left: CommonFunction().isApp(context) ? 16 : 0,
               top: 48,
               bottom: 48,
             ),
