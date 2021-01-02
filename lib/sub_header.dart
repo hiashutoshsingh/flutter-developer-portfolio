@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_developer_portfolio/common_functions.dart';
 import 'package:flutter_developer_portfolio/constants.dart';
 
 class SubHeader extends StatelessWidget {
@@ -19,24 +20,33 @@ class SubHeader extends StatelessWidget {
           flex: 2,
           child: Row(
             mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CommonFunction().isApp(context)
+                ? CrossAxisAlignment.start
+                : CrossAxisAlignment.center,
             children: [
-              Text(
-                number,
-                style: TextStyle(
-                  fontSize: 24,
-                  color: Constants.green,
+              Padding(
+                padding: EdgeInsets.only(
+                  top: CommonFunction().isApp(context) ? 6 : 2,
+                ),
+                child: Text(
+                  number,
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: Constants.green,
+                  ),
                 ),
               ),
               SizedBox(
                 width: 8,
               ),
-              Text(
-                heading,
-                style: TextStyle(
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                  color: Constants.white,
+              Flexible(
+                child: Text(
+                  heading,
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: Constants.white,
+                  ),
                 ),
               ),
               SizedBox(
@@ -45,13 +55,15 @@ class SubHeader extends StatelessWidget {
             ],
           ),
         ),
-        Flexible(
-          flex: 1,
-          child: Container(
-            height: .1,
-            color: Constants.slate,
-          ),
-        )
+        CommonFunction().isApp(context)
+            ? Container()
+            : Flexible(
+                flex: 1,
+                child: Container(
+                  height: .1,
+                  color: Constants.slate,
+                ),
+              )
       ],
     );
   }
