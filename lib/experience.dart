@@ -61,7 +61,7 @@ class _ExperienceState extends State<Experience> {
                         itemCount: _companyList.length,
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
-                        reverse: true,
+                        reverse: CommonFunction().isApp(context) ? false : true,
                         itemBuilder: (context, index) {
                           return InkWell(
                             splashColor: Colors.transparent,

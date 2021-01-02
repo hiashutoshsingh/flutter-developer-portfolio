@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_developer_portfolio/about.dart';
 import 'package:flutter_developer_portfolio/app_home_body.dart';
@@ -36,6 +37,16 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Constants.navy,
+      bottomNavigationBar: CommonFunction().isApp(context)
+          ? SafeArea(
+              child: Padding(
+                padding: EdgeInsets.all(
+                  kIsWeb ? 8.0 : 0,
+                ),
+                child: SocialHandles(),
+              ),
+            )
+          : Container(),
       appBar: AppBar(
         backgroundColor: Constants.navy,
         shadowColor: Constants.green.withOpacity(0.5),
