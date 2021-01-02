@@ -22,7 +22,7 @@ class About extends StatelessWidget {
           Text(
             "Hello! I'm Ashutosh, a software developer based in India.",
             style: TextStyle(
-              fontSize: CommonFunction().app(context) ? 18 : 16,
+              fontSize: CommonFunction().isApp(context) ? 18 : 16,
               color: Constants.slate,
             ),
           ),
@@ -32,7 +32,7 @@ class About extends StatelessWidget {
           Text(
             'I am currently developing mobile apps using Flutter and has delivered 10+ projects in mobile and web. \nI am currently working as Software Developer at Innovaccer and also do some side projects to enhance my skills in mobile.',
             style: TextStyle(
-              fontSize: CommonFunction().app(context) ? 18 : 16,
+              fontSize: CommonFunction().isApp(context) ? 18 : 16,
               color: Constants.slate,
             ),
           ),
@@ -42,7 +42,7 @@ class About extends StatelessWidget {
           Text(
             'I also love to produce music beats, investing sometime in learning and making beats using Fl Studio.',
             style: TextStyle(
-              fontSize: CommonFunction().app(context) ? 18 : 16,
+              fontSize: CommonFunction().isApp(context) ? 18 : 16,
               color: Constants.slate,
             ),
           ),
@@ -52,7 +52,7 @@ class About extends StatelessWidget {
           Text(
             "Some technologies which I have worked on are:",
             style: TextStyle(
-              fontSize: CommonFunction().app(context) ? 18 : 16,
+              fontSize: CommonFunction().isApp(context) ? 18 : 16,
               color: Constants.slate,
             ),
           ),
@@ -104,7 +104,7 @@ class About extends StatelessWidget {
       children: [
         Icon(
           Icons.ac_unit_sharp,
-          size: CommonFunction().app(context) ? 20 : 16,
+          size: CommonFunction().isApp(context) ? 20 : 16,
           color: Constants.green,
         ),
         SizedBox(
@@ -113,7 +113,7 @@ class About extends StatelessWidget {
         Text(
           value,
           style: TextStyle(
-            fontSize: CommonFunction().app(context) ? 18 : 16,
+            fontSize: CommonFunction().isApp(context) ? 18 : 16,
             color: Constants.slate,
           ),
         ),

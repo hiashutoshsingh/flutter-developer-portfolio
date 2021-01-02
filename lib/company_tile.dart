@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_developer_portfolio/common_functions.dart';
 import 'package:flutter_developer_portfolio/constants.dart';
 
 class CompanyTile extends StatelessWidget {
@@ -13,14 +14,22 @@ class CompanyTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: selected ? Constants.green.withOpacity(.05) : Colors.transparent,
+      decoration: BoxDecoration(
+        color: selected ? Constants.green.withOpacity(.05) : Colors.transparent,
+        borderRadius: BorderRadius.circular(
+          CommonFunction().isApp(context) ? 12 : 0,
+        ),
+      ),
       child: Padding(
         padding: EdgeInsets.all(12.0),
         child: Text(
           val,
           style: TextStyle(
-            fontSize: 16,
+            fontSize: CommonFunction().isApp(context) ? 18 : 16,
             color: selected ? Constants.green : Constants.slate,
+            fontWeight: CommonFunction().isApp(context)
+                ? FontWeight.w600
+                : FontWeight.normal,
           ),
         ),
       ),

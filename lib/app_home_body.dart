@@ -28,7 +28,13 @@ class AppHomeBody extends StatelessWidget {
             ),
             child: About(),
           ),
-          Experience(),
+          Padding(
+            padding: const EdgeInsets.only(
+              left: 8,
+              right: 4,
+            ),
+            child: Experience(),
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 48),
             child: Projects(),
