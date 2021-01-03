@@ -107,6 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: PageView(
                           scrollDirection: Axis.vertical,
                           controller: _pageController,
+                          pageSnapping: false,
                           children: [
                             Introduction(),
                             About(),
