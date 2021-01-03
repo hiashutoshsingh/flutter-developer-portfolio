@@ -162,6 +162,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               'hiashutoshkumarsingh@gmail.com',
                               style: TextStyle(
                                 fontSize: 16,
+                                fontFamily: 'FiraSans',
+                                fontWeight: FontWeight.w400,
                                 color: _emailHover
                                     ? Constants.green
                                     : Constants.slate,

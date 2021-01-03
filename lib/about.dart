@@ -23,6 +23,8 @@ class About extends StatelessWidget {
           style: TextStyle(
             fontSize: CommonFunction().isApp(context) ? 18 : 16,
             color: Constants.slate,
+            fontFamily: 'FiraSans',
+            fontWeight: FontWeight.w400,
           ),
         ),
         SizedBox(
@@ -33,6 +35,8 @@ class About extends StatelessWidget {
           style: TextStyle(
             fontSize: CommonFunction().isApp(context) ? 18 : 16,
             color: Constants.slate,
+            fontFamily: 'FiraSans',
+            fontWeight: FontWeight.w400,
           ),
         ),
         SizedBox(
@@ -43,6 +47,8 @@ class About extends StatelessWidget {
           style: TextStyle(
             fontSize: CommonFunction().isApp(context) ? 18 : 16,
             color: Constants.slate,
+            fontFamily: 'FiraSans',
+            fontWeight: FontWeight.w400,
           ),
         ),
         SizedBox(
@@ -53,6 +59,8 @@ class About extends StatelessWidget {
           style: TextStyle(
             fontSize: CommonFunction().isApp(context) ? 18 : 16,
             color: Constants.slate,
+            fontFamily: 'FiraSans',
+            fontWeight: FontWeight.w400,
           ),
         ),
         SizedBox(
@@ -113,6 +121,8 @@ class About extends StatelessWidget {
           style: TextStyle(
             fontSize: CommonFunction().isApp(context) ? 18 : 16,
             color: Constants.slate,
+            fontFamily: 'FiraSans',
+            fontWeight: FontWeight.w400,
           ),
         ),
       ],

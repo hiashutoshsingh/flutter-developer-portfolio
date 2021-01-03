@@ -81,6 +81,7 @@ class _ProjectShowcaseState extends State<ProjectShowcase> {
                   fontSize: 24,
                   fontWeight: FontWeight.w600,
                   color: Constants.lightestSlate,
+                  fontFamily: 'FiraSans',
                 ),
               ),
               SizedBox(
@@ -140,6 +141,8 @@ class _ProjectShowcaseState extends State<ProjectShowcase> {
             style: TextStyle(
               fontSize: CommonFunction().isApp(context) ? 18 : 16,
               color: Constants.green,
+              fontFamily: 'FiraSans',
+              fontWeight: FontWeight.w400,
             ),
           ),
           SizedBox(

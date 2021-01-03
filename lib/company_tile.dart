@@ -27,9 +27,10 @@ class CompanyTile extends StatelessWidget {
           style: TextStyle(
             fontSize: CommonFunction().isApp(context) ? 18 : 16,
             color: selected ? Constants.green : Constants.slate,
+            fontFamily: 'FiraSans',
             fontWeight: CommonFunction().isApp(context)
                 ? FontWeight.w600
-                : FontWeight.normal,
+                : FontWeight.w400,
           ),
         ),
       ),
