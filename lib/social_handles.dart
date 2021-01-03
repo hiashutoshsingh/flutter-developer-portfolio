@@ -165,6 +165,18 @@ class _SocialHandlesState extends State<SocialHandles> {
       SizedBox(
         height: 16,
       ),
+      CommonFunction().isApp(context)
+          ? InkWell(
+              onTap: () {
+                CommonFunction().openMail();
+              },
+              child: Icon(
+                Icons.email_outlined,
+                size: 24,
+                color: Constants.slate,
+              ),
+            )
+          : Container(),
     ];
   }
 }

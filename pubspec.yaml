@@ -26,3 +26,13 @@ flutter:
   assets:
     - asset/
 
+  fonts:
+    - family: FiraSans
+      fonts:
+        - asset: asset/fonts/FiraSans-Regular.ttf
+          weight: 400
+        - asset: asset/fonts/FiraSans-SemiBold.ttf
+          weight: 600
+        - asset: asset/fonts/FiraSans-ExtraBold.ttf
+          weight: 800
+

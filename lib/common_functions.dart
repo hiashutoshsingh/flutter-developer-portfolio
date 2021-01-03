@@ -15,7 +15,6 @@ class CommonFunction {
       scheme: 'mailto',
       path: 'hiashutoshkumarsingh@gmail.com',
     );
-
     launch(_emailLaunchUri.toString());
   }
 

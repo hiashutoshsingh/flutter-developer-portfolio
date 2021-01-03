@@ -163,6 +163,7 @@ class CompanyJobInfo extends StatelessWidget {
           style: TextStyle(
             fontSize: 20,
             color: Constants.white,
+            fontFamily: 'FiraSans',
             fontWeight: CommonFunction().isApp(context)
                 ? FontWeight.w600
                 : FontWeight.normal,
@@ -178,6 +179,8 @@ class CompanyJobInfo extends StatelessWidget {
                   ' @' + company,
                   style: TextStyle(
                     fontSize: 20,
+                    fontFamily: 'FiraSans',
+                    fontWeight: FontWeight.w400,
                     color: Constants.green,
                   ),
                 ),
@@ -192,6 +195,8 @@ class CompanyJobInfo extends StatelessWidget {
       style: TextStyle(
         fontSize: CommonFunction().isApp(context) ? 18 : 16,
         color: Constants.slate,
+        fontFamily: 'FiraSans',
+        fontWeight: FontWeight.w400,
       ),
     );
   }
@@ -217,6 +222,8 @@ class CompanyJobInfo extends StatelessWidget {
             style: TextStyle(
               fontSize: CommonFunction().isApp(context) ? 18 : 16,
               color: Constants.slate,
+              fontFamily: 'FiraSans',
+              fontWeight: FontWeight.w400,
             ),
           ),
         ),

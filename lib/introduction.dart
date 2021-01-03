@@ -16,6 +16,7 @@ class Introduction extends StatelessWidget {
               fontWeight: FontWeight.w600,
               fontSize: CommonFunction().isApp(context) ? 24 : 16,
               color: Constants.green,
+              fontFamily: 'FiraSans',
             ),
           ),
           SizedBox(
@@ -24,9 +25,10 @@ class Introduction extends StatelessWidget {
           Text(
             'Ashutosh Singh.',
             style: TextStyle(
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w800,
               fontSize: CommonFunction().isApp(context) ? 48 : 64,
               color: Constants.white,
+              fontFamily: 'FiraSans',
             ),
           ),
           SizedBox(
@@ -35,7 +37,8 @@ class Introduction extends StatelessWidget {
           Text(
             'I build mobile apps.',
             style: TextStyle(
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w800,
+              fontFamily: 'FiraSans',
               fontSize: CommonFunction().isApp(context) ? 48 : 64,
               color: Constants.lightSlate,
             ),
@@ -48,6 +51,7 @@ class Introduction extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w600,
               fontSize: 16,
+              fontFamily: 'FiraSans',
               color: Constants.slate,
             ),
           ),
