@@ -12,8 +12,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.0
-  url_launcher: ^5.7.10
+  cupertino_icons: 1.0.0
+  url_launcher: 5.7.10
+  particles_flutter: 0.1.1
+
 
 
 dev_dependencies:
