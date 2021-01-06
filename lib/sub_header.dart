@@ -63,7 +63,7 @@ class SubHeader extends StatelessWidget {
             : Flexible(
                 flex: 1,
                 child: Container(
-                  height: .1,
+                  height: 1,
                   color: Constants.slate,
                 ),
               )
