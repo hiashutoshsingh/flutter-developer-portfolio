@@ -87,14 +87,14 @@ class _HomeScreenState extends State<HomeScreen> {
             CircularParticle(
               key: UniqueKey(),
               awayRadius: 1,
-              numberOfParticles: CommonFunction().isApp(context) ? 70 : 100,
+              numberOfParticles: CommonFunction().isApp(context) ? 60 : 90,
               speedOfParticles: 3,
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               onTapAnimation: true,
               particleColor: Constants.white,
               awayAnimationDuration: Duration(milliseconds: 600),
-              maxParticleSize: 6,
+              maxParticleSize: 5,
               isRandSize: true,
               isRandomColor: true,
               randColorList: [
