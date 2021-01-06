@@ -24,9 +24,10 @@ class WebAppBar extends StatelessWidget {
               child: Text(
                 'Ashutosh.'.toUpperCase(),
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w800,
                   fontSize: 32,
                   color: Constants.green,
+                  fontFamily: 'FiraSans',
                 ),
               ),
             ),
@@ -95,6 +96,8 @@ class WebAppBar extends StatelessWidget {
           style: TextStyle(
             fontSize: 16,
             color: Colors.white,
+            fontFamily: 'FiraSans',
+            fontWeight: FontWeight.w400,
           ),
         ),
       ],

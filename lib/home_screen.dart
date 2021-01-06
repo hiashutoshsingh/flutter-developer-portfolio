@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: SocialHandles(),
               ),
             )
-          : Container(),
+          : null,
       appBar: AppBar(
         backgroundColor: Constants.navy,
         shadowColor: Constants.green.withOpacity(0.5),
@@ -107,6 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: PageView(
                           scrollDirection: Axis.vertical,
                           controller: _pageController,
+                          pageSnapping: false,
                           children: [
                             Introduction(),
                             About(),
@@ -162,6 +163,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               'hiashutoshkumarsingh@gmail.com',
                               style: TextStyle(
                                 fontSize: 16,
+                                fontFamily: 'FiraSans',
+                                fontWeight: FontWeight.w400,
                                 color: _emailHover
                                     ? Constants.green
                                     : Constants.slate,

@@ -33,6 +33,8 @@ class SubHeader extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 24,
                     color: Constants.green,
+                    fontFamily: 'FiraSans',
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ),
@@ -44,7 +46,8 @@ class SubHeader extends StatelessWidget {
                   heading,
                   style: TextStyle(
                     fontSize: 32,
-                    fontWeight: FontWeight.bold,
+                    fontFamily: 'FiraSans',
+                    fontWeight: FontWeight.w800,
                     color: Constants.white,
                   ),
                 ),
