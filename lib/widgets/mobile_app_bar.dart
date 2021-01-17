@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_developer_portfolio/constants.dart';
+import 'package:flutter_developer_portfolio/utils/constants.dart';
 
 class MobileAppBar extends StatefulWidget {
   final Function(bool, int) appBarClick;

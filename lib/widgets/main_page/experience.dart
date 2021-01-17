@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_developer_portfolio/common_functions.dart';
-import 'package:flutter_developer_portfolio/company_job_info.dart';
-import 'package:flutter_developer_portfolio/company_tile.dart';
-import 'package:flutter_developer_portfolio/sub_header.dart';
+import 'package:flutter_developer_portfolio/utils/common_functions.dart';
+import 'package:flutter_developer_portfolio/widgets/company_job_info.dart';
+import 'package:flutter_developer_portfolio/widgets/company_tile.dart';
+import 'package:flutter_developer_portfolio/widgets/sub_header.dart';
 
 class Experience extends StatefulWidget {
   @override
@@ -16,6 +16,7 @@ class _ExperienceState extends State<Experience> {
 
   @override
   void initState() {
+    /// todo move to constants
     _companyList = [
       'Optimus Technology & IT - Services',
       'SAPNE NGO',
@@ -40,7 +41,7 @@ class _ExperienceState extends State<Experience> {
       children: [
         Padding(
           padding: EdgeInsets.only(
-            top: CommonFunction().isApp(context) ? 64 : 0,
+            top: CommonFunction.isApp(context) ? 64 : 0,
           ),
           child: SubHeader(
             number: '02.',
@@ -50,7 +51,7 @@ class _ExperienceState extends State<Experience> {
         SizedBox(
           height: 32,
         ),
-        CommonFunction().isApp(context)
+        CommonFunction.isApp(context)
             ? Expanded(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -61,7 +62,7 @@ class _ExperienceState extends State<Experience> {
                         itemCount: _companyList.length,
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
-                        reverse: CommonFunction().isApp(context) ? false : true,
+                        reverse: CommonFunction.isApp(context) ? false : true,
                         itemBuilder: (context, index) {
                           return InkWell(
                             splashColor: Colors.transparent,

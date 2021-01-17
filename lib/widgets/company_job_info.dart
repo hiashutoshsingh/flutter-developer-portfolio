@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_developer_portfolio/common_functions.dart';
-import 'package:flutter_developer_portfolio/constants.dart';
+import 'package:flutter_developer_portfolio/utils/common_functions.dart';
+import 'package:flutter_developer_portfolio/utils/constants.dart';
 
 class CompanyJobInfo extends StatelessWidget {
   final int selectedIndex;
@@ -15,6 +15,7 @@ class CompanyJobInfo extends StatelessWidget {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          /// todo generic
           _position('Software Developer', 'Innovaccer',
               'https://innovaccer.com/', context),
           SizedBox(
@@ -164,16 +165,16 @@ class CompanyJobInfo extends StatelessWidget {
             fontSize: 20,
             color: Constants.white,
             fontFamily: 'FiraSans',
-            fontWeight: CommonFunction().isApp(context)
+            fontWeight: CommonFunction.isApp(context)
                 ? FontWeight.w600
                 : FontWeight.normal,
           ),
         ),
-        CommonFunction().isApp(context)
+        CommonFunction.isApp(context)
             ? Container()
             : InkWell(
                 onTap: () {
-                  CommonFunction().openFromUrl(link);
+                  CommonFunction.openFromUrl(link);
                 },
                 child: Text(
                   ' @' + company,
@@ -193,7 +194,7 @@ class CompanyJobInfo extends StatelessWidget {
     return Text(
       '$start - $end',
       style: TextStyle(
-        fontSize: CommonFunction().isApp(context) ? 18 : 16,
+        fontSize: CommonFunction.isApp(context) ? 18 : 16,
         color: Constants.slate,
         fontFamily: 'FiraSans',
         fontWeight: FontWeight.w400,
@@ -209,7 +210,7 @@ class CompanyJobInfo extends StatelessWidget {
           padding: const EdgeInsets.only(top: 2),
           child: Icon(
             Icons.play_arrow,
-            size: CommonFunction().isApp(context) ? 20 : 16,
+            size: CommonFunction.isApp(context) ? 20 : 16,
             color: Constants.green,
           ),
         ),
@@ -220,7 +221,7 @@ class CompanyJobInfo extends StatelessWidget {
           child: Text(
             value,
             style: TextStyle(
-              fontSize: CommonFunction().isApp(context) ? 18 : 16,
+              fontSize: CommonFunction.isApp(context) ? 18 : 16,
               color: Constants.slate,
               fontFamily: 'FiraSans',
               fontWeight: FontWeight.w400,

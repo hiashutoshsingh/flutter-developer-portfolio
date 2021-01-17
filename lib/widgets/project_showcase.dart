@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_developer_portfolio/constants.dart';
+import 'package:flutter_developer_portfolio/utils/constants.dart';
 
-import 'common_functions.dart';
+import '../utils/common_functions.dart';
 
 class ProjectShowcase extends StatefulWidget {
   final String title;
@@ -22,11 +22,12 @@ class ProjectShowcase extends StatefulWidget {
 
 class _ProjectShowcaseState extends State<ProjectShowcase> {
   List<Widget> _showcaseList;
-  String _playstore;
+  String _playStore;
 
   @override
   void initState() {
-    _playstore = 'playstore_dark';
+    /// todo generic
+    _playStore = 'playstore_dark';
     if (widget.title == 'Janhit') {
       _showcaseList = [
         _placeholder('janhit_1'),
@@ -90,7 +91,7 @@ class _ProjectShowcaseState extends State<ProjectShowcase> {
               widget.playStoreUrl != null
                   ? InkWell(
                       onTap: () {
-                        CommonFunction().openFromUrl(widget.playStoreUrl);
+                        CommonFunction.openFromUrl(widget.playStoreUrl);
                       },
                       child: Card(
                         shadowColor: Constants.green,
@@ -110,21 +111,21 @@ class _ProjectShowcaseState extends State<ProjectShowcase> {
                       padding: const EdgeInsets.only(left: 16),
                       child: InkWell(
                         onTap: () {
-                          CommonFunction().openFromUrl(widget.githubUrl);
+                          CommonFunction.openFromUrl(widget.githubUrl);
                         },
                         onHover: (value) {
                           if (value) {
                             setState(() {
-                              _playstore = 'github_light';
+                              _playStore = 'github_light';
                             });
                           } else {
                             setState(() {
-                              _playstore = 'github_dark';
+                              _playStore = 'github_dark';
                             });
                           }
                         },
                         child: Image.asset(
-                          'asset/$_playstore.png',
+                          'asset/$_playStore.png',
                           width: 16,
                           height: 16,
                         ),
@@ -139,7 +140,7 @@ class _ProjectShowcaseState extends State<ProjectShowcase> {
           Text(
             widget.subTitle,
             style: TextStyle(
-              fontSize: CommonFunction().isApp(context) ? 18 : 16,
+              fontSize: CommonFunction.isApp(context) ? 18 : 16,
               color: Constants.green,
               fontFamily: 'FiraSans',
               fontWeight: FontWeight.w400,

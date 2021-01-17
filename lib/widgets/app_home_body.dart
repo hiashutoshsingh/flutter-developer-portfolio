@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_developer_portfolio/about.dart';
-import 'package:flutter_developer_portfolio/common_functions.dart';
-import 'package:flutter_developer_portfolio/experience.dart';
-import 'package:flutter_developer_portfolio/introduction.dart';
-import 'package:flutter_developer_portfolio/project_showcase.dart';
-import 'package:flutter_developer_portfolio/projects.dart';
+import 'package:flutter_developer_portfolio/utils/common_functions.dart';
+import 'package:flutter_developer_portfolio/widgets/main_page/about.dart';
+import 'package:flutter_developer_portfolio/widgets/main_page/experience.dart';
+import 'package:flutter_developer_portfolio/widgets/main_page/introduction.dart';
+import 'package:flutter_developer_portfolio/widgets/main_page/projects.dart';
+import 'package:flutter_developer_portfolio/widgets/project_showcase.dart';
 
 import 'other_projects.dart';
 
@@ -46,15 +46,17 @@ class AppHomeBody extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: CommonFunction().isApp(context) ? 16 : 0,
+              left: CommonFunction.isApp(context) ? 16 : 0,
               top: 48,
               bottom: 48,
             ),
             child: Projects(),
           ),
+
+          /// todo generic
           Padding(
             padding: EdgeInsets.only(
-              left: CommonFunction().isApp(context) ? 16 : 0,
+              left: CommonFunction.isApp(context) ? 16 : 0,
             ),
             child: _showcaseWidget('Intellect',
                 'Intellect provides you platform to prepare for UPSC.',
@@ -63,14 +65,14 @@ class AppHomeBody extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: CommonFunction().isApp(context) ? 16 : 0,
+              left: CommonFunction.isApp(context) ? 16 : 0,
             ),
             child: _showcaseWidget('Intellect Dashboard',
                 'Dashboard to mange your courses, videos, tests and materials for Intellect app.'),
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: CommonFunction().isApp(context) ? 16 : 0,
+              left: CommonFunction.isApp(context) ? 16 : 0,
             ),
             child: _showcaseWidget('Batuni',
                 'Batuni connects you to other users in topic based anonymous audio chats.',
@@ -79,7 +81,7 @@ class AppHomeBody extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: CommonFunction().isApp(context) ? 16 : 0,
+              left: CommonFunction.isApp(context) ? 16 : 0,
             ),
             child: _showcaseWidget('Duit',
                 'Duit provides you to share contact information with anyone to expand your reach.',
@@ -88,7 +90,7 @@ class AppHomeBody extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: CommonFunction().isApp(context) ? 16 : 0,
+              left: CommonFunction.isApp(context) ? 16 : 0,
               top: 48,
               bottom: 48,
             ),

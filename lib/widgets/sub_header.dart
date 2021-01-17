@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_developer_portfolio/common_functions.dart';
-import 'package:flutter_developer_portfolio/constants.dart';
+import 'package:flutter_developer_portfolio/utils/common_functions.dart';
+import 'package:flutter_developer_portfolio/utils/constants.dart';
 
 class SubHeader extends StatelessWidget {
   final String number;
@@ -20,13 +20,13 @@ class SubHeader extends StatelessWidget {
           flex: 2,
           child: Row(
             mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CommonFunction().isApp(context)
+            crossAxisAlignment: CommonFunction.isApp(context)
                 ? CrossAxisAlignment.start
                 : CrossAxisAlignment.center,
             children: [
               Padding(
                 padding: EdgeInsets.only(
-                  top: CommonFunction().isApp(context) ? 6 : 2,
+                  top: CommonFunction.isApp(context) ? 6 : 2,
                 ),
                 child: Text(
                   number,
@@ -58,7 +58,7 @@ class SubHeader extends StatelessWidget {
             ],
           ),
         ),
-        CommonFunction().isApp(context)
+        CommonFunction.isApp(context)
             ? Container()
             : Flexible(
                 flex: 1,

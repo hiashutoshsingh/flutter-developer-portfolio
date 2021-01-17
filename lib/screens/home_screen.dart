@@ -1,17 +1,17 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_developer_portfolio/about.dart';
-import 'package:flutter_developer_portfolio/app_home_body.dart';
-import 'package:flutter_developer_portfolio/common_functions.dart';
-import 'package:flutter_developer_portfolio/constants.dart';
-import 'package:flutter_developer_portfolio/experience.dart';
-import 'package:flutter_developer_portfolio/introduction.dart';
-import 'package:flutter_developer_portfolio/mobile_app_bar.dart';
-import 'package:flutter_developer_portfolio/other_projects.dart';
-import 'package:flutter_developer_portfolio/project_showcase.dart';
-import 'package:flutter_developer_portfolio/projects.dart';
-import 'package:flutter_developer_portfolio/social_handles.dart';
-import 'package:flutter_developer_portfolio/web_app_bar.dart';
+import 'package:flutter_developer_portfolio/utils/common_functions.dart';
+import 'package:flutter_developer_portfolio/utils/constants.dart';
+import 'package:flutter_developer_portfolio/widgets/app_home_body.dart';
+import 'package:flutter_developer_portfolio/widgets/main_page/about.dart';
+import 'package:flutter_developer_portfolio/widgets/main_page/experience.dart';
+import 'package:flutter_developer_portfolio/widgets/main_page/introduction.dart';
+import 'package:flutter_developer_portfolio/widgets/main_page/projects.dart';
+import 'package:flutter_developer_portfolio/widgets/mobile_app_bar.dart';
+import 'package:flutter_developer_portfolio/widgets/other_projects.dart';
+import 'package:flutter_developer_portfolio/widgets/project_showcase.dart';
+import 'package:flutter_developer_portfolio/widgets/social_handles.dart';
+import 'package:flutter_developer_portfolio/widgets/web_app_bar.dart';
 import 'package:particles_flutter/particles_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Constants.navy,
-      bottomNavigationBar: CommonFunction().isApp(context)
+      bottomNavigationBar: CommonFunction.isApp(context)
           ? SafeArea(
               child: Padding(
                 padding: EdgeInsets.all(
@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
         shadowColor: Constants.green.withOpacity(0.5),
         elevation: 10,
         toolbarHeight: _appBarHeight,
-        title: CommonFunction().isApp(context)
+        title: CommonFunction.isApp(context)
             ? MobileAppBar(
                 appBarClick: (isToggled, item) {
                   setState(() {
@@ -87,14 +87,14 @@ class _HomeScreenState extends State<HomeScreen> {
             CircularParticle(
               key: UniqueKey(),
               awayRadius: 1,
-              numberOfParticles: CommonFunction().isApp(context) ? 40 : 90,
+              numberOfParticles: CommonFunction.isApp(context) ? 30 : 80,
               speedOfParticles: 2,
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               onTapAnimation: true,
               particleColor: Constants.white,
               awayAnimationDuration: Duration(milliseconds: 600),
-              maxParticleSize: CommonFunction().isApp(context) ? 3 : 2,
+              maxParticleSize: 2,
               isRandSize: false,
               isRandomColor: true,
               randColorList: [
@@ -108,7 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
               hoverRadius: 90,
               connectDots: false,
             ),
-            CommonFunction().isApp(context)
+            CommonFunction.isApp(context)
                 ? AppHomeBody(
                     pageController: _pageController,
                   )
@@ -146,6 +146,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                         vertical: 48),
                                     child: Projects(),
                                   ),
+
+                                  /// todo pass this through constants
                                   _showcaseWidget('Intellect',
                                       'Intellect provides you platform to prepare for UPSC.',
                                       appUrl:
@@ -177,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 quarterTurns: 1,
                                 child: InkWell(
                                   onTap: () {
-                                    CommonFunction().openMail();
+                                    CommonFunction.openMail();
                                   },
                                   onHover: (val) {
                                     if (val) {
@@ -190,8 +192,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                       });
                                     }
                                   },
+
+                                  /// todo from constants
                                   child: Text(
                                     'hiashutoshkumarsingh@gmail.com',
+
+                                    /// todo style from TextStyle
                                     style: TextStyle(
                                       fontSize: 16,
                                       fontFamily: 'FiraSans',

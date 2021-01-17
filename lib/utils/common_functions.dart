@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class CommonFunction {
-  void openFromUrl(String url) async {
+  static void openFromUrl(String url) async {
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -10,7 +10,8 @@ class CommonFunction {
     }
   }
 
-  void openMail() {
+  static void openMail() {
+    /// todo mail
     Uri _emailLaunchUri = Uri(
       scheme: 'mailto',
       path: 'hiashutoshkumarsingh@gmail.com',
@@ -18,7 +19,7 @@ class CommonFunction {
     launch(_emailLaunchUri.toString());
   }
 
-  bool isApp(BuildContext context) {
+  static bool isApp(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     if (width > 800) {
       return false;
