@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_developer_portfolio/common_functions.dart';
-import 'package:flutter_developer_portfolio/constants.dart';
+import 'package:flutter_developer_portfolio/utils/common_functions.dart';
+import 'package:flutter_developer_portfolio/utils/constants.dart';
 
 class CompanyTile extends StatelessWidget {
   final String val;
@@ -17,7 +17,7 @@ class CompanyTile extends StatelessWidget {
       decoration: BoxDecoration(
         color: selected ? Constants.green.withOpacity(.05) : Colors.transparent,
         borderRadius: BorderRadius.circular(
-          CommonFunction().isApp(context) ? 12 : 0,
+          CommonFunction.isApp(context) ? 12 : 0,
         ),
       ),
       child: Padding(
@@ -25,10 +25,10 @@ class CompanyTile extends StatelessWidget {
         child: Text(
           val,
           style: TextStyle(
-            fontSize: CommonFunction().isApp(context) ? 18 : 16,
+            fontSize: CommonFunction.isApp(context) ? 18 : 16,
             color: selected ? Constants.green : Constants.slate,
             fontFamily: 'FiraSans',
-            fontWeight: CommonFunction().isApp(context)
+            fontWeight: CommonFunction.isApp(context)
                 ? FontWeight.w600
                 : FontWeight.w400,
           ),

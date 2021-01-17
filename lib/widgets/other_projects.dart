@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_developer_portfolio/constants.dart';
+import 'package:flutter_developer_portfolio/utils/constants.dart';
 
-import 'common_functions.dart';
+import '../utils/common_functions.dart';
 
 class OtherProjects extends StatefulWidget {
   @override
@@ -19,6 +19,8 @@ class _OtherProjectsState extends State<OtherProjects> {
   @override
   void initState() {
     super.initState();
+
+    /// todo generic
     _titleOtherProject = [
       'Flutter Animation Examples',
       'FlutterUIChallenge',
@@ -56,7 +58,7 @@ class _OtherProjectsState extends State<OtherProjects> {
                 fontFamily: 'FiraSans',
               ),
             ),
-            CommonFunction().isApp(context)
+            CommonFunction.isApp(context)
                 ? Container()
                 : Padding(
                     padding: const EdgeInsets.only(
@@ -82,13 +84,13 @@ class _OtherProjectsState extends State<OtherProjects> {
               scrollDirection: Axis.horizontal,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: CommonFunction().isApp(context) ? .7 : .6,
+                childAspectRatio: CommonFunction.isApp(context) ? .7 : .6,
               ),
               itemBuilder: (context, index) {
                 return Padding(
                   padding: EdgeInsets.only(
-                    right: CommonFunction().isApp(context) ? 16 : 32,
-                    bottom: CommonFunction().isApp(context) ? 48 : 32,
+                    right: CommonFunction.isApp(context) ? 16 : 32,
+                    bottom: CommonFunction.isApp(context) ? 48 : 32,
                   ),
                   child: Card(
                     color: Constants.lightNavy,
@@ -110,17 +112,17 @@ class _OtherProjectsState extends State<OtherProjects> {
                                 onTap: _link[index] != null &&
                                         _link[index].trim().isNotEmpty
                                     ? () {
-                                        CommonFunction()
-                                            .openFromUrl(_link[index]);
+                                        CommonFunction.openFromUrl(
+                                            _link[index]);
                                       }
                                     : null,
                                 hoverColor: Colors.transparent,
                                 child: Image.asset(
                                   'asset/github_dark.png',
                                   width:
-                                      CommonFunction().isApp(context) ? 24 : 16,
+                                      CommonFunction.isApp(context) ? 24 : 16,
                                   height:
-                                      CommonFunction().isApp(context) ? 24 : 16,
+                                      CommonFunction.isApp(context) ? 24 : 16,
                                 ),
                               ),
                             ],
@@ -131,8 +133,7 @@ class _OtherProjectsState extends State<OtherProjects> {
                           Text(
                             _titleOtherProject[index],
                             style: TextStyle(
-                              fontSize:
-                                  CommonFunction().isApp(context) ? 20 : 16,
+                              fontSize: CommonFunction.isApp(context) ? 20 : 16,
                               fontWeight: FontWeight.w600,
                               color: Constants.white,
                               fontFamily: 'FiraSans',
@@ -144,8 +145,7 @@ class _OtherProjectsState extends State<OtherProjects> {
                           Text(
                             _subTitleOtherProject[index],
                             style: TextStyle(
-                              fontSize:
-                                  CommonFunction().isApp(context) ? 18 : 16,
+                              fontSize: CommonFunction.isApp(context) ? 18 : 16,
                               color: Constants.lightestSlate,
                               fontFamily: 'FiraSans',
                               fontWeight: FontWeight.w400,

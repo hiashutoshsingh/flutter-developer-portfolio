@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_developer_portfolio/common_functions.dart';
-import 'package:flutter_developer_portfolio/constants.dart';
+import 'package:flutter_developer_portfolio/utils/common_functions.dart';
+import 'package:flutter_developer_portfolio/utils/constants.dart';
 
 class SocialHandles extends StatefulWidget {
   @override
@@ -21,6 +21,8 @@ class _SocialHandlesState extends State<SocialHandles> {
   @override
   void initState() {
     super.initState();
+
+    /// todo generic
     github = 'github_dark';
     facebook = 'facebook_dark';
     instagram = 'instagram_dark';
@@ -30,7 +32,7 @@ class _SocialHandlesState extends State<SocialHandles> {
 
   @override
   Widget build(BuildContext context) {
-    return CommonFunction().isApp(context)
+    return CommonFunction.isApp(context)
         ? Row(
             mainAxisSize: MainAxisSize.max,
             children: _socialList(),
@@ -45,7 +47,7 @@ class _SocialHandlesState extends State<SocialHandles> {
     return [
       InkWell(
         onTap: () {
-          CommonFunction().openFromUrl(Constants.githubUrl);
+          CommonFunction.openFromUrl(Constants.githubUrl);
         },
         onHover: (value) {
           if (value) {
@@ -71,7 +73,7 @@ class _SocialHandlesState extends State<SocialHandles> {
       ),
       InkWell(
         onTap: () {
-          CommonFunction().openFromUrl(Constants.linkedinUrl);
+          CommonFunction.openFromUrl(Constants.linkedinUrl);
         },
         onHover: (value) {
           if (value) {
@@ -95,7 +97,7 @@ class _SocialHandlesState extends State<SocialHandles> {
       ),
       InkWell(
         onTap: () {
-          CommonFunction().openFromUrl(Constants.twitterUrl);
+          CommonFunction.openFromUrl(Constants.twitterUrl);
         },
         onHover: (value) {
           if (value) {
@@ -119,7 +121,7 @@ class _SocialHandlesState extends State<SocialHandles> {
       ),
       InkWell(
         onTap: () {
-          CommonFunction().openFromUrl(Constants.instagramUrl);
+          CommonFunction.openFromUrl(Constants.instagramUrl);
         },
         onHover: (value) {
           if (value) {
@@ -143,7 +145,7 @@ class _SocialHandlesState extends State<SocialHandles> {
       ),
       InkWell(
         onTap: () {
-          CommonFunction().openFromUrl(Constants.facebookUrl);
+          CommonFunction.openFromUrl(Constants.facebookUrl);
         },
         onHover: (value) {
           if (value) {
@@ -165,10 +167,10 @@ class _SocialHandlesState extends State<SocialHandles> {
       SizedBox(
         height: 16,
       ),
-      CommonFunction().isApp(context)
+      CommonFunction.isApp(context)
           ? InkWell(
               onTap: () {
-                CommonFunction().openMail();
+                CommonFunction.openMail();
               },
               child: Icon(
                 Icons.email_outlined,

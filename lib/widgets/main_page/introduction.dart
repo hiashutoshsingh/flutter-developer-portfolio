@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_developer_portfolio/common_functions.dart';
-import 'package:flutter_developer_portfolio/constants.dart';
+import 'package:flutter_developer_portfolio/utils/common_functions.dart';
+import 'package:flutter_developer_portfolio/utils/constants.dart';
 
 class Introduction extends StatelessWidget {
   @override
@@ -10,11 +10,12 @@ class Introduction extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          /// todo generic
           Text(
             'Hi, my name is',
             style: TextStyle(
               fontWeight: FontWeight.w600,
-              fontSize: CommonFunction().isApp(context) ? 24 : 16,
+              fontSize: CommonFunction.isApp(context) ? 24 : 16,
               color: Constants.green,
               fontFamily: 'FiraSans',
             ),
@@ -26,7 +27,7 @@ class Introduction extends StatelessWidget {
             'Ashutosh Singh.',
             style: TextStyle(
               fontWeight: FontWeight.w800,
-              fontSize: CommonFunction().isApp(context) ? 48 : 64,
+              fontSize: CommonFunction.isApp(context) ? 48 : 64,
               color: Constants.white,
               fontFamily: 'FiraSans',
             ),
@@ -39,7 +40,7 @@ class Introduction extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.w800,
               fontFamily: 'FiraSans',
-              fontSize: CommonFunction().isApp(context) ? 48 : 64,
+              fontSize: CommonFunction.isApp(context) ? 48 : 64,
               color: Constants.lightSlate,
             ),
           ),

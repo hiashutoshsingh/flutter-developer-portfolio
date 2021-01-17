@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_developer_portfolio/project_showcase.dart';
-import 'package:flutter_developer_portfolio/sub_header.dart';
+import 'package:flutter_developer_portfolio/widgets/project_showcase.dart';
+import 'package:flutter_developer_portfolio/widgets/sub_header.dart';
 
 class Projects extends StatelessWidget {
   @override
@@ -17,6 +17,9 @@ class Projects extends StatelessWidget {
           SizedBox(
             height: 32,
           ),
+
+          /// todo change this
+          /// todo generic
           Expanded(
             child: ProjectShowcase(
               title: 'Janhit',

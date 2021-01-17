@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_developer_portfolio/constants.dart';
+import 'package:flutter_developer_portfolio/utils/constants.dart';
 
 class WebAppBar extends StatelessWidget {
   final Function(int) pageCallback;
@@ -21,6 +21,8 @@ class WebAppBar extends StatelessWidget {
               onTap: () {
                 pageCallback(0);
               },
+
+              /// todo generic
               child: Text(
                 'Ashutosh.'.toUpperCase(),
                 style: TextStyle(

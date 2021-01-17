@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_developer_portfolio/constants.dart';
-import 'package:flutter_developer_portfolio/sub_header.dart';
+import 'package:flutter_developer_portfolio/utils/constants.dart';
+import 'package:flutter_developer_portfolio/widgets/sub_header.dart';
 
-import 'common_functions.dart';
+import '../../utils/common_functions.dart';
 
 class About extends StatefulWidget {
   @override
@@ -40,10 +40,11 @@ class _AboutState extends State<About> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  /// todo move all contents to constants
                   Text(
                     "Hello! I'm Ashutosh, a software developer based in India.",
                     style: TextStyle(
-                      fontSize: CommonFunction().isApp(context) ? 18 : 16,
+                      fontSize: CommonFunction.isApp(context) ? 18 : 16,
                       color: Constants.slate,
                       fontFamily: 'FiraSans',
                       fontWeight: FontWeight.w400,
@@ -55,7 +56,7 @@ class _AboutState extends State<About> {
                   Text(
                     'I am currently developing mobile apps using Flutter and has delivered 10+ projects in mobile and web. \nI am currently working as Software Developer at Innovaccer and also do some side projects to enhance my skills in mobile.',
                     style: TextStyle(
-                      fontSize: CommonFunction().isApp(context) ? 18 : 16,
+                      fontSize: CommonFunction.isApp(context) ? 18 : 16,
                       color: Constants.slate,
                       fontFamily: 'FiraSans',
                       fontWeight: FontWeight.w400,
@@ -67,7 +68,7 @@ class _AboutState extends State<About> {
                   Text(
                     'I also love to produce music beats, investing sometime in learning and making beats using Fl Studio.',
                     style: TextStyle(
-                      fontSize: CommonFunction().isApp(context) ? 18 : 16,
+                      fontSize: CommonFunction.isApp(context) ? 18 : 16,
                       color: Constants.slate,
                       fontFamily: 'FiraSans',
                       fontWeight: FontWeight.w400,
@@ -79,7 +80,7 @@ class _AboutState extends State<About> {
                   Text(
                     "Some technologies which I have worked on are:",
                     style: TextStyle(
-                      fontSize: CommonFunction().isApp(context) ? 18 : 16,
+                      fontSize: CommonFunction.isApp(context) ? 18 : 16,
                       color: Constants.slate,
                       fontFamily: 'FiraSans',
                       fontWeight: FontWeight.w400,
@@ -174,7 +175,7 @@ class _AboutState extends State<About> {
       children: [
         Icon(
           Icons.ac_unit_sharp,
-          size: CommonFunction().isApp(context) ? 20 : 16,
+          size: CommonFunction.isApp(context) ? 20 : 16,
           color: Constants.green,
         ),
         SizedBox(
@@ -183,7 +184,7 @@ class _AboutState extends State<About> {
         Text(
           value,
           style: TextStyle(
-            fontSize: CommonFunction().isApp(context) ? 18 : 16,
+            fontSize: CommonFunction.isApp(context) ? 18 : 16,
             color: Constants.slate,
             fontFamily: 'FiraSans',
             fontWeight: FontWeight.w400,
