@@ -1,4 +1,4 @@
-# flutter_developer_portfolio
+# Developer Portfolio
 
-Flutter Developer Portfolio
+Portfolio built on Flutter.
 
