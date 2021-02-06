@@ -16,6 +16,8 @@ class _ExperienceState extends State<Experience> {
 
   @override
   void initState() {
+    super.initState();
+
     /// todo move to constants
     _companyList = [
       'Optimus Technology & IT - Services',
@@ -24,12 +26,20 @@ class _ExperienceState extends State<Experience> {
       'Zappfresh',
       'Innovaccer',
     ];
-
     for (int i = 0; i < 4; i++) {
       _companySelected.add(false);
     }
     _companySelected.add(true);
-    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (CommonFunction.isApp(context)) {
+      _selectedIndex = 0;
+      _companyList = _companyList.reversed.toList();
+      _companySelected = _companySelected.reversed.toList();
+    }
   }
 
   @override
@@ -94,7 +104,7 @@ class _ExperienceState extends State<Experience> {
                         left: 12,
                       ),
                       child: CompanyJobInfo(
-                        selectedIndex: 4 - _selectedIndex,
+                        selectedIndex: CommonFunction.isApp(context) ? _selectedIndex : 4 - _selectedIndex,
                       ),
                     ),
                   ],
@@ -127,8 +137,7 @@ class _ExperienceState extends State<Experience> {
                             });
                           },
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 4) +
-                                EdgeInsets.only(right: 64),
+                            padding: const EdgeInsets.symmetric(vertical: 4) + EdgeInsets.only(right: 64),
                             child: CompanyTile(
                               val: _companyList[index],
                               selected: _companySelected[index],
