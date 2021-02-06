@@ -84,13 +84,13 @@ class _OtherProjectsState extends State<OtherProjects> {
               scrollDirection: Axis.horizontal,
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: CommonFunction.isApp(context) ? .7 : .6,
+                childAspectRatio: CommonFunction.isApp(context) ? .75 : .6,
               ),
               itemBuilder: (context, index) {
                 return Padding(
                   padding: EdgeInsets.only(
                     right: CommonFunction.isApp(context) ? 16 : 32,
-                    bottom: CommonFunction.isApp(context) ? 48 : 32,
+                    bottom: CommonFunction.isApp(context) ? 24 : 32,
                   ),
                   child: Card(
                     color: Constants.lightNavy,
@@ -109,20 +109,16 @@ class _OtherProjectsState extends State<OtherProjects> {
                                 height: 48,
                               ),
                               InkWell(
-                                onTap: _link[index] != null &&
-                                        _link[index].trim().isNotEmpty
+                                onTap: _link[index] != null && _link[index].trim().isNotEmpty
                                     ? () {
-                                        CommonFunction.openFromUrl(
-                                            _link[index]);
+                                        CommonFunction.openFromUrl(_link[index]);
                                       }
                                     : null,
                                 hoverColor: Colors.transparent,
                                 child: Image.asset(
                                   'asset/github_dark.png',
-                                  width:
-                                      CommonFunction.isApp(context) ? 24 : 16,
-                                  height:
-                                      CommonFunction.isApp(context) ? 24 : 16,
+                                  width: CommonFunction.isApp(context) ? 24 : 16,
+                                  height: CommonFunction.isApp(context) ? 24 : 16,
                                 ),
                               ),
                             ],
