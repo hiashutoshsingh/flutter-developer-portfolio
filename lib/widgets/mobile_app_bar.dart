@@ -39,6 +39,7 @@ class _MobileAppBarState extends State<MobileAppBar> {
                   fontWeight: FontWeight.bold,
                   fontSize: 32,
                   color: Constants.green,
+                  fontFamily: 'FiraSans',
                 ),
               ),
             ),
@@ -120,14 +121,15 @@ class _MobileAppBarState extends State<MobileAppBar> {
               color: Constants.green.withOpacity(0.8),
             ),
             SizedBox(
-              width: 20,
+              width: 16,
             ),
             Text(
               title,
               style: TextStyle(
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.w800,
                 fontSize: kIsWeb ? 16 : 20,
-                color: Constants.slate,
+                color: Constants.white,
+                fontFamily: 'FiraSans',
               ),
             ),
           ],
