@@ -16,8 +16,7 @@ class CompanyJobInfo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           /// todo generic
-          _position('Software Developer', 'Innovaccer',
-              'https://innovaccer.com/', context),
+          _position('Software Developer', 'Innovaccer', 'https://innovaccer.com/', context),
           SizedBox(
             height: 8,
           ),
@@ -32,8 +31,7 @@ class CompanyJobInfo extends StatelessWidget {
             height: 12,
           ),
           _jobRole(
-              'Communicate with multi-disciplinary teams of engineers, designers and product managers on a daily basis',
-              context),
+              'Communicate with multi-disciplinary teams of engineers, designers and product managers on a daily basis', context),
           SizedBox(
             height: 12,
           ),
@@ -52,8 +50,7 @@ class CompanyJobInfo extends StatelessWidget {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _position('Executive Software Developer', 'Zappfresh',
-              'https://www.zappfresh.com/', context),
+          _position('Executive Software Developer', 'Zappfresh', 'https://www.zappfresh.com/', context),
           SizedBox(
             height: 8,
           ),
@@ -67,23 +64,18 @@ class CompanyJobInfo extends StatelessWidget {
           SizedBox(
             height: 12,
           ),
-          _jobRole(
-              'Built and designed basic inventory app using Flutter used by people at various hubs of Zappfresh',
-              context),
+          _jobRole('Built and designed basic inventory app using Flutter used by people at various hubs of Zappfresh', context),
           SizedBox(
             height: 12,
           ),
-          _jobRole(
-              'Responsible for the design, build, debug & maintenance of current app of Zappfresh',
-              context),
+          _jobRole('Responsible for the design, build, debug & maintenance of current app of Zappfresh', context),
         ],
       );
     } else if (selectedIndex == 2) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _position('Software Engineer Intern', 'DUIT Mobile',
-              'https://www.duit.io/', context),
+          _position('Software Engineer Intern', 'DUIT Mobile', 'https://www.duit.io/', context),
           SizedBox(
             height: 8,
           ),
@@ -92,22 +84,18 @@ class CompanyJobInfo extends StatelessWidget {
             height: 16,
           ),
           _jobRole(
-              'Successfully implemented modules like profile, analytics, Realm and also app connected with server APIs',
-              context),
+              'Successfully implemented modules like profile, analytics, Realm and also app connected with server APIs', context),
           SizedBox(
             height: 12,
           ),
-          _jobRole(
-              'Conducted and Organised Startup Events and networking with people',
-              context),
+          _jobRole('Conducted and Organised Startup Events and networking with people', context),
         ],
       );
     } else if (selectedIndex == 3) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _position('Android Developer Intern', 'Sapne NGO',
-              'http://www.sapne.org.in/', context),
+          _position('Android Developer Intern', 'Sapne NGO', 'http://www.sapne.org.in/', context),
           SizedBox(
             height: 8,
           ),
@@ -115,15 +103,11 @@ class CompanyJobInfo extends StatelessWidget {
           SizedBox(
             height: 16,
           ),
-          _jobRole(
-              'Improved app functionality and logics by writing modular code',
-              context),
+          _jobRole('Improved app functionality and logics by writing modular code', context),
           SizedBox(
             height: 12,
           ),
-          _jobRole(
-              'Planned and implemented few modules in current to attract users',
-              context),
+          _jobRole('Planned and implemented few modules in current to attract users', context),
         ],
       );
     } else {
@@ -131,10 +115,7 @@ class CompanyJobInfo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _position(
-              'Android Developer Intern',
-              'Optimus Technology & IT - Services',
-              'https://www.optimustechnology.com/',
-              context),
+              'Android Developer Intern', 'Optimus Technology & IT - Services', 'https://www.optimustechnology.com/', context),
           SizedBox(
             height: 8,
           ),
@@ -142,21 +123,17 @@ class CompanyJobInfo extends StatelessWidget {
           SizedBox(
             height: 16,
           ),
-          _jobRole(
-              'Successfully Created a Prototype of E-learning app', context),
+          _jobRole('Successfully Created a Prototype of E-learning app', context),
           SizedBox(
             height: 12,
           ),
-          _jobRole(
-              'Connected with the Local Database using SQLite to handle offline data',
-              context),
+          _jobRole('Connected with the Local Database using SQLite to handle offline data', context),
         ],
       );
     }
   }
 
-  Widget _position(
-      String position, String company, String link, BuildContext context) {
+  Widget _position(String position, String company, String link, BuildContext context) {
     return Row(
       children: [
         Text(
@@ -165,9 +142,7 @@ class CompanyJobInfo extends StatelessWidget {
             fontSize: 20,
             color: Constants.white,
             fontFamily: 'FiraSans',
-            fontWeight: CommonFunction.isApp(context)
-                ? FontWeight.w600
-                : FontWeight.normal,
+            fontWeight: CommonFunction.isApp(context) ? FontWeight.w600 : FontWeight.normal,
           ),
         ),
         CommonFunction.isApp(context)
@@ -221,7 +196,7 @@ class CompanyJobInfo extends StatelessWidget {
           child: Text(
             value,
             style: TextStyle(
-              fontSize: CommonFunction.isApp(context) ? 18 : 16,
+              fontSize: 16,
               color: Constants.slate,
               fontFamily: 'FiraSans',
               fontWeight: FontWeight.w400,
