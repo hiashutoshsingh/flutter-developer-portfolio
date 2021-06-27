@@ -1,18 +1,19 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_developer_portfolio/utils/common_functions.dart';
-import 'package:flutter_developer_portfolio/utils/constants.dart';
-import 'package:flutter_developer_portfolio/widgets/app_home_body.dart';
-import 'package:flutter_developer_portfolio/widgets/main_page/about.dart';
-import 'package:flutter_developer_portfolio/widgets/main_page/experience.dart';
-import 'package:flutter_developer_portfolio/widgets/main_page/introduction.dart';
-import 'package:flutter_developer_portfolio/widgets/main_page/projects.dart';
-import 'package:flutter_developer_portfolio/widgets/mobile_app_bar.dart';
-import 'package:flutter_developer_portfolio/widgets/other_projects.dart';
-import 'package:flutter_developer_portfolio/widgets/project_showcase.dart';
-import 'package:flutter_developer_portfolio/widgets/social_handles.dart';
-import 'package:flutter_developer_portfolio/widgets/web_app_bar.dart';
 import 'package:particles_flutter/particles_flutter.dart';
+
+import '../utils/common_functions.dart';
+import '../utils/constants.dart';
+import '../widgets/app_home_body.dart';
+import '../widgets/main_page/about.dart';
+import '../widgets/main_page/experience.dart';
+import '../widgets/main_page/introduction.dart';
+import '../widgets/main_page/projects.dart';
+import '../widgets/mobile_app_bar.dart';
+import '../widgets/other_projects.dart';
+import '../widgets/project_showcase.dart';
+import '../widgets/social_handles.dart';
+import '../widgets/web_app_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -108,117 +109,109 @@ class _HomeScreenState extends State<HomeScreen> {
               hoverRadius: 90,
               connectDots: false,
             ),
-            CommonFunction.isApp(context)
-                ? AppHomeBody(
-                    pageController: _pageController,
-                  )
-                : Container(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 48,
-                      ),
-                      child: Row(
+            if (CommonFunction.isApp(context))
+              AppHomeBody(
+                pageController: _pageController,
+              )
+            else
+              Container(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 48,
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
                         mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            mainAxisSize: MainAxisSize.max,
+                          SocialHandles(),
+                          _bottomLine(),
+                        ],
+                      ),
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 128),
+                          child: PageView(
+                            scrollDirection: Axis.vertical,
+                            controller: _pageController,
+                            pageSnapping: false,
                             children: [
-                              SocialHandles(),
-                              _bottomLine(),
+                              Introduction(),
+                              About(),
+                              Experience(),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 48),
+                                child: Projects(),
+                              ),
+
+                              /// todo pass this through constants
+                              _showcaseWidget('Intellect', 'Intellect provides you platform to prepare for UPSC.',
+                                  appUrl: 'https://play.google.com/store/apps/details?id=com.intellectias.gradeupProto'),
+                              _showcaseWidget('Intellect Dashboard',
+                                  'Dashboard to mange your courses, videos, tests and materials for Intellect app.'),
+                              _showcaseWidget(
+                                  'Batuni', 'Batuni connects you to other users in topic based anonymous audio chats.',
+                                  appUrl: 'https://play.google.com/store/apps/details?id=app.batuni'),
+                              _showcaseWidget(
+                                  'Duit', 'Duit provides you to share contact information with anyone to expand your reach.',
+                                  appUrl: 'https://play.google.com/store/apps/details?id=io.duit.ecards'),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(vertical: 48),
+                                child: OtherProjects(),
+                              ),
                             ],
                           ),
-                          Expanded(
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 128),
-                              child: PageView(
-                                scrollDirection: Axis.vertical,
-                                controller: _pageController,
-                                pageSnapping: false,
-                                children: [
-                                  Introduction(),
-                                  About(),
-                                  Experience(),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 48),
-                                    child: Projects(),
-                                  ),
+                        ),
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          RotatedBox(
+                            quarterTurns: 1,
+                            child: InkWell(
+                              onTap: () {
+                                CommonFunction.openMail();
+                              },
+                              onHover: (val) {
+                                if (val) {
+                                  setState(() {
+                                    _emailHover = true;
+                                  });
+                                } else {
+                                  setState(() {
+                                    _emailHover = false;
+                                  });
+                                }
+                              },
 
-                                  /// todo pass this through constants
-                                  _showcaseWidget('Intellect',
-                                      'Intellect provides you platform to prepare for UPSC.',
-                                      appUrl:
-                                          'https://play.google.com/store/apps/details?id=com.intellectias.gradeupProto'),
-                                  _showcaseWidget('Intellect Dashboard',
-                                      'Dashboard to mange your courses, videos, tests and materials for Intellect app.'),
-                                  _showcaseWidget('Batuni',
-                                      'Batuni connects you to other users in topic based anonymous audio chats.',
-                                      appUrl:
-                                          'https://play.google.com/store/apps/details?id=app.batuni'),
-                                  _showcaseWidget('Duit',
-                                      'Duit provides you to share contact information with anyone to expand your reach.',
-                                      appUrl:
-                                          'https://play.google.com/store/apps/details?id=io.duit.ecards'),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 48),
-                                    child: OtherProjects(),
-                                  ),
-                                ],
+                              /// todo from constants
+                              child: Text(
+                                'hiashutoshkumarsingh@gmail.com',
+
+                                /// todo style from TextStyle
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontFamily: 'FiraSans',
+                                  fontWeight: FontWeight.w400,
+                                  color: _emailHover ? Constants.green : Constants.slate,
+                                ),
                               ),
                             ),
                           ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              RotatedBox(
-                                quarterTurns: 1,
-                                child: InkWell(
-                                  onTap: () {
-                                    CommonFunction.openMail();
-                                  },
-                                  onHover: (val) {
-                                    if (val) {
-                                      setState(() {
-                                        _emailHover = true;
-                                      });
-                                    } else {
-                                      setState(() {
-                                        _emailHover = false;
-                                      });
-                                    }
-                                  },
-
-                                  /// todo from constants
-                                  child: Text(
-                                    'hiashutoshkumarsingh@gmail.com',
-
-                                    /// todo style from TextStyle
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      fontFamily: 'FiraSans',
-                                      fontWeight: FontWeight.w400,
-                                      color: _emailHover
-                                          ? Constants.green
-                                          : Constants.slate,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 16,
-                              ),
-                              _bottomLine(),
-                            ],
+                          SizedBox(
+                            height: 16,
                           ),
+                          _bottomLine(),
                         ],
                       ),
-                    ),
+                    ],
                   ),
+                ),
+              ),
           ],
         ),
       ),
