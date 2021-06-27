@@ -163,16 +163,11 @@ class _AboutState extends State<About> {
         }
       },
       child: Padding(
-        padding: EdgeInsets.symmetric(
-              horizontal: 16,
-            ) +
-            EdgeInsets.only(
-              bottom: CommonFunction.isApp(context) ? 8 : 32,
-            ),
+        padding: EdgeInsets.symmetric(horizontal: 16) + EdgeInsets.only(bottom: CommonFunction.isApp(context) ? 8 : 32),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(6),
           child: Image.asset(
-            "asset/profile.jpg",
+            "asset/profile.png",
             colorBlendMode: _blendMode,
             color: Constants.green,
             height: CommonFunction.isApp(context) ? 120 : null,
