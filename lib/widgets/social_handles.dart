@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_developer_portfolio/utils/common_functions.dart';
 import 'package:flutter_developer_portfolio/utils/constants.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import '../utils/constants.dart';
+import 'social_handle_item.dart';
 
 class SocialHandles extends StatefulWidget {
   @override
@@ -8,28 +12,6 @@ class SocialHandles extends StatefulWidget {
 }
 
 class _SocialHandlesState extends State<SocialHandles> {
-  String github;
-
-  String facebook;
-
-  String instagram;
-
-  String linkedin;
-
-  String twitter;
-
-  @override
-  void initState() {
-    super.initState();
-
-    /// todo generic
-    github = 'github_dark';
-    facebook = 'facebook_dark';
-    instagram = 'instagram_dark';
-    linkedin = 'linkedin_dark';
-    twitter = 'twitter_dark';
-  }
-
   @override
   Widget build(BuildContext context) {
     return CommonFunction.isApp(context)
@@ -45,124 +27,44 @@ class _SocialHandlesState extends State<SocialHandles> {
 
   List<Widget> _socialList() {
     return [
-      InkWell(
-        onTap: () {
-          CommonFunction.openFromUrl(Constants.githubUrl);
-        },
-        onHover: (value) {
-          if (value) {
-            setState(() {
-              github = 'github_light';
-            });
-          } else {
-            setState(() {
-              github = 'github_dark';
-            });
-          }
-        },
-        child: Container(
-          child: Image.asset(
-            'asset/$github.png',
-            width: 20,
-            height: 20,
-          ),
-        ),
+      SocialHandleItem(
+        assetName: 'github',
+        socialHandleUrl: Constants.githubUrl,
       ),
       SizedBox(
         height: 32,
       ),
-      InkWell(
-        onTap: () {
-          CommonFunction.openFromUrl(Constants.linkedinUrl);
-        },
-        onHover: (value) {
-          if (value) {
-            setState(() {
-              linkedin = 'linkedin_light';
-            });
-          } else {
-            setState(() {
-              linkedin = 'linkedin_dark';
-            });
-          }
-        },
-        child: Image.asset(
-          'asset/$linkedin.png',
-          width: 20,
-          height: 20,
-        ),
+      SocialHandleItem(
+        assetName: 'linkedin',
+        socialHandleUrl: Constants.linkedinUrl,
       ),
       SizedBox(
         height: 32,
       ),
-      InkWell(
-        onTap: () {
-          CommonFunction.openFromUrl(Constants.twitterUrl);
-        },
-        onHover: (value) {
-          if (value) {
-            setState(() {
-              twitter = 'twitter_light';
-            });
-          } else {
-            setState(() {
-              twitter = 'twitter_dark';
-            });
-          }
-        },
-        child: Image.asset(
-          'asset/$twitter.png',
-          width: 20,
-          height: 20,
-        ),
+      SocialHandleItem(
+        assetName: 'medium',
+        socialHandleUrl: Constants.mediumUrl,
       ),
       SizedBox(
         height: 32,
       ),
-      InkWell(
-        onTap: () {
-          CommonFunction.openFromUrl(Constants.instagramUrl);
-        },
-        onHover: (value) {
-          if (value) {
-            setState(() {
-              instagram = 'instagram_light';
-            });
-          } else {
-            setState(() {
-              instagram = 'instagram_dark';
-            });
-          }
-        },
-        child: Image.asset(
-          'asset/$instagram.png',
-          width: 20,
-          height: 20,
-        ),
+      SocialHandleItem(
+        assetName: 'twitter',
+        socialHandleUrl: Constants.twitterUrl,
       ),
       SizedBox(
         height: 32,
       ),
-      InkWell(
-        onTap: () {
-          CommonFunction.openFromUrl(Constants.facebookUrl);
-        },
-        onHover: (value) {
-          if (value) {
-            setState(() {
-              facebook = 'facebook_light';
-            });
-          } else {
-            setState(() {
-              facebook = 'facebook_dark';
-            });
-          }
-        },
-        child: Image.asset(
-          'asset/$facebook.png',
-          width: 20,
-          height: 20,
-        ),
+      SocialHandleItem(
+        assetName: 'instagram',
+        socialHandleUrl: Constants.instagramUrl,
+      ),
+      SizedBox(
+        height: 32,
+      ),
+      SocialHandleItem(
+        assetName: 'facebook',
+        socialHandleUrl: Constants.facebookUrl,
       ),
       SizedBox(
         height: 16,
