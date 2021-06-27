@@ -28,7 +28,18 @@ class _ProjectShowcaseState extends State<ProjectShowcase> {
   void initState() {
     /// todo generic
     _playStore = 'playstore_dark';
-    if (widget.title == 'Janhit') {
+    if (widget.title == 'YourSkool') {
+      _showcaseList = [
+        _placeholder('y1'),
+        _placeholder('y2'),
+        _placeholder('y3'),
+        _placeholder('y4'),
+        _placeholder('y5'),
+        _placeholder('y6'),
+        _placeholder('y7'),
+        _placeholder('y8'),
+      ];
+    } else if (widget.title == 'Janhit') {
       _showcaseList = [
         _placeholder('janhit_1'),
         _placeholder('janhit_2'),

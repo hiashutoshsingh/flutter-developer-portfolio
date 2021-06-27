@@ -58,35 +58,50 @@ class AppHomeBody extends StatelessWidget {
             padding: EdgeInsets.only(
               left: CommonFunction.isApp(context) ? 16 : 0,
             ),
-            child: _showcaseWidget('Intellect',
-                'Intellect provides you platform to prepare for UPSC.',
-                appUrl:
-                    'https://play.google.com/store/apps/details?id=com.intellectias.gradeupProto'),
+            child: _showcaseWidget(
+              'YourSkool',
+              'YourSkool gives a platform to practise english for children aged 5-12yrs.',
+              appUrl: 'https://play.google.com/store/apps/details?id=co.yourskool',
+            ),
           ),
           Padding(
             padding: EdgeInsets.only(
               left: CommonFunction.isApp(context) ? 16 : 0,
             ),
-            child: _showcaseWidget('Intellect Dashboard',
-                'Dashboard to mange your courses, videos, tests and materials for Intellect app.'),
+            child: _showcaseWidget(
+              'Intellect',
+              'Intellect provides you platform to prepare for UPSC.',
+              appUrl: 'https://play.google.com/store/apps/details?id=com.intellectias.gradeupProto',
+            ),
           ),
           Padding(
             padding: EdgeInsets.only(
               left: CommonFunction.isApp(context) ? 16 : 0,
             ),
-            child: _showcaseWidget('Batuni',
-                'Batuni connects you to other users in topic based anonymous audio chats.',
-                appUrl:
-                    'https://play.google.com/store/apps/details?id=app.batuni'),
+            child: _showcaseWidget(
+              'Intellect Dashboard',
+              'Dashboard to mange your courses, videos, tests and materials for Intellect app.',
+            ),
           ),
           Padding(
             padding: EdgeInsets.only(
               left: CommonFunction.isApp(context) ? 16 : 0,
             ),
-            child: _showcaseWidget('Duit',
-                'Duit provides you to share contact information with anyone to expand your reach.',
-                appUrl:
-                    'https://play.google.com/store/apps/details?id=io.duit.ecards'),
+            child: _showcaseWidget(
+              'Batuni',
+              'Batuni connects you to other users in topic based anonymous audio chats.',
+              appUrl: 'https://play.google.com/store/apps/details?id=app.batuni',
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: CommonFunction.isApp(context) ? 16 : 0,
+            ),
+            child: _showcaseWidget(
+              'Duit',
+              'Duit provides you to share contact information with anyone to expand your reach.',
+              appUrl: 'https://play.google.com/store/apps/details?id=io.duit.ecards',
+            ),
           ),
           Padding(
             padding: EdgeInsets.only(

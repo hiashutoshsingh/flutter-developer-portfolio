@@ -36,6 +36,12 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Constants.navy,
@@ -148,16 +154,30 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
 
                               /// todo pass this through constants
-                              _showcaseWidget('Intellect', 'Intellect provides you platform to prepare for UPSC.',
-                                  appUrl: 'https://play.google.com/store/apps/details?id=com.intellectias.gradeupProto'),
-                              _showcaseWidget('Intellect Dashboard',
-                                  'Dashboard to mange your courses, videos, tests and materials for Intellect app.'),
                               _showcaseWidget(
-                                  'Batuni', 'Batuni connects you to other users in topic based anonymous audio chats.',
-                                  appUrl: 'https://play.google.com/store/apps/details?id=app.batuni'),
+                                'YourSkool',
+                                'YourSkool gives a platform to practise english for children aged 5-12yrs.',
+                                appUrl: 'https://play.google.com/store/apps/details?id=co.yourskool',
+                              ),
                               _showcaseWidget(
-                                  'Duit', 'Duit provides you to share contact information with anyone to expand your reach.',
-                                  appUrl: 'https://play.google.com/store/apps/details?id=io.duit.ecards'),
+                                'Intellect',
+                                'Intellect provides you platform to prepare for UPSC.',
+                                appUrl: 'https://play.google.com/store/apps/details?id=com.intellectias.gradeupProto',
+                              ),
+                              _showcaseWidget(
+                                'Intellect Dashboard',
+                                'Dashboard to mange your courses, videos, tests and materials for Intellect app.',
+                              ),
+                              _showcaseWidget(
+                                'Batuni',
+                                'Batuni connects you to other users in topic based anonymous audio chats.',
+                                appUrl: 'https://play.google.com/store/apps/details?id=app.batuni',
+                              ),
+                              _showcaseWidget(
+                                'Duit',
+                                'Duit provides you to share contact information with anyone to expand your reach.',
+                                appUrl: 'https://play.google.com/store/apps/details?id=io.duit.ecards',
+                              ),
                               Padding(
                                 padding: const EdgeInsets.symmetric(vertical: 48),
                                 child: OtherProjects(),
