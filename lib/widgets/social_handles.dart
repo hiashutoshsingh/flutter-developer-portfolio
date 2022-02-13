@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_developer_portfolio/utils/common_functions.dart';
 import 'package:flutter_developer_portfolio/utils/constants.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../utils/constants.dart';
 import 'social_handle_item.dart';

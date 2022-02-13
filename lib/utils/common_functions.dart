@@ -11,7 +11,6 @@ class CommonFunction {
   }
 
   static void openMail() {
-    /// todo mail
     Uri _emailLaunchUri = Uri(
       scheme: 'mailto',
       path: 'hiashutoshkumarsingh@gmail.com',

@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_developer_portfolio/widgets/bottom_line_widget.dart';
+import 'package:flutter_developer_portfolio/widgets/email_widget.dart';
 import 'package:particles_flutter/particles_flutter.dart';
 
 import '../utils/common_functions.dart';
@@ -22,13 +24,11 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   PageController _pageController;
-  bool _emailHover;
   double _appBarHeight;
 
   @override
   void initState() {
     super.initState();
-    _emailHover = false;
     _pageController = PageController(
       keepPage: true,
       viewportFraction: 1,
@@ -134,7 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           SocialHandles(),
-                          _bottomLine(),
+                          BottomLineWidget(),
                         ],
                       ),
                       Expanded(
@@ -186,65 +186,13 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          RotatedBox(
-                            quarterTurns: 1,
-                            child: InkWell(
-                              onTap: () {
-                                CommonFunction.openMail();
-                              },
-                              onHover: (val) {
-                                if (val) {
-                                  setState(() {
-                                    _emailHover = true;
-                                  });
-                                } else {
-                                  setState(() {
-                                    _emailHover = false;
-                                  });
-                                }
-                              },
-
-                              /// todo from constants
-                              child: Text(
-                                'hiashutoshkumarsingh@gmail.com',
-
-                                /// todo style from TextStyle
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: 'FiraSans',
-                                  fontWeight: FontWeight.w400,
-                                  color: _emailHover ? Constants.green : Constants.slate,
-                                ),
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 16,
-                          ),
-                          _bottomLine(),
-                        ],
-                      ),
+                      EmailWidget(),
                     ],
                   ),
                 ),
               ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _bottomLine() {
-    return Padding(
-      padding: const EdgeInsets.only(top: 16),
-      child: Container(
-        height: 100,
-        width: 1,
-        color: Constants.white,
       ),
     );
   }
