@@ -5,10 +5,12 @@ import 'package:flutter_developer_portfolio/utils/constants.dart';
 class OtherProjectItem extends StatelessWidget {
   final String title;
   final String description;
+  final String url;
 
   OtherProjectItem({
     this.title,
     this.description,
+    this.url,
   });
 
   @override
@@ -26,19 +28,34 @@ class OtherProjectItem extends StatelessWidget {
           color: Constants.lightNavy,
           elevation: 5,
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.all(16.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: CommonFunction.isApp(context) ? 20 : 16,
-                    fontWeight: FontWeight.w600,
-                    color: Constants.white,
-                    fontFamily: 'FiraSans',
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                        fontSize: CommonFunction.isApp(context) ? 20 : 16,
+                        fontWeight: FontWeight.w600,
+                        color: Constants.white,
+                        fontFamily: 'FiraSans',
+                      ),
+                    ),
+                    InkWell(
+                      onTap: () {
+                        CommonFunction.openFromUrl(url);
+                      },
+                      child: Icon(
+                        Icons.open_in_new,
+                        size: CommonFunction.isApp(context) ? 20 : 16,
+                        color: Constants.green,
+                      ),
+                    )
+                  ],
                 ),
                 SizedBox(
                   height: 16,

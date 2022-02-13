@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_developer_portfolio/utils/common_functions.dart';
-import 'package:flutter_developer_portfolio/widgets/main_page/about.dart';
+import 'package:flutter_developer_portfolio/widgets/main_page/about_me_widget.dart';
 import 'package:flutter_developer_portfolio/widgets/main_page/experience.dart';
 import 'package:flutter_developer_portfolio/widgets/main_page/introduction.dart';
 import 'package:flutter_developer_portfolio/widgets/main_page/projects.dart';
@@ -35,7 +35,7 @@ class AppHomeBody extends StatelessWidget {
               left: 16,
               right: 16,
             ),
-            child: About(),
+            child: AboutMeWidget(),
           ),
           Padding(
             padding: const EdgeInsets.only(

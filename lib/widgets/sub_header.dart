@@ -20,9 +20,7 @@ class SubHeader extends StatelessWidget {
           flex: 2,
           child: Row(
             mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CommonFunction.isApp(context)
-                ? CrossAxisAlignment.start
-                : CrossAxisAlignment.center,
+            crossAxisAlignment: CommonFunction.isApp(context) ? CrossAxisAlignment.start : CrossAxisAlignment.center,
             children: [
               Padding(
                 padding: EdgeInsets.only(
@@ -63,7 +61,7 @@ class SubHeader extends StatelessWidget {
             : Flexible(
                 flex: 1,
                 child: Container(
-                  height: 1,
+                  height: .5,
                   color: Constants.slate,
                 ),
               )

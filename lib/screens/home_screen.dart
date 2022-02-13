@@ -7,7 +7,7 @@ import 'package:particles_flutter/particles_flutter.dart';
 import '../utils/common_functions.dart';
 import '../utils/constants.dart';
 import '../widgets/app_home_body.dart';
-import '../widgets/main_page/about.dart';
+import '../widgets/main_page/about_me_widget.dart';
 import '../widgets/main_page/experience.dart';
 import '../widgets/main_page/introduction.dart';
 import '../widgets/main_page/projects.dart';
@@ -140,7 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             pageSnapping: false,
                             children: [
                               Introduction(),
-                              About(),
+                              AboutMeWidget(),
                               Experience(),
                               Padding(
                                 padding: const EdgeInsets.symmetric(vertical: 48),

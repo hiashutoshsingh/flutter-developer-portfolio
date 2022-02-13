@@ -3,13 +3,14 @@ import 'package:flutter_developer_portfolio/utils/constants.dart';
 import 'package:flutter_developer_portfolio/widgets/sub_header.dart';
 
 import '../../utils/common_functions.dart';
+import '../tech_stack_item.dart';
 
-class About extends StatefulWidget {
+class AboutMeWidget extends StatefulWidget {
   @override
-  _AboutState createState() => _AboutState();
+  _AboutMeWidgetState createState() => _AboutMeWidgetState();
 }
 
-class _AboutState extends State<About> {
+class _AboutMeWidgetState extends State<AboutMeWidget> {
   BlendMode _blendMode;
 
   @override
@@ -91,41 +92,38 @@ class _AboutState extends State<About> {
                     height: 16,
                   ),
                   Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      Flexible(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            _techItem('Flutter', context),
-                            SizedBox(
-                              height: 12,
-                            ),
-                            _techItem('Android', context),
-                            SizedBox(
-                              height: 12,
-                            ),
-                            _techItem('JavaScript', context),
-                          ],
-                        ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          TechStackItem(text: 'Flutter'),
+                          SizedBox(
+                            height: 12,
+                          ),
+                          TechStackItem(text: 'Android'),
+                          SizedBox(
+                            height: 12,
+                          ),
+                          TechStackItem(text: 'JavaScript'),
+                        ],
                       ),
                       SizedBox(
-                        width: 24,
+                        width: 32,
                       ),
-                      Flexible(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            _techItem('Flutter-Web', context),
-                            SizedBox(
-                              height: 12,
-                            ),
-                            _techItem('iOS', context),
-                            SizedBox(
-                              height: 12,
-                            ),
-                            _techItem('ReactNative', context),
-                          ],
-                        ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          TechStackItem(text: 'Flutter-Web'),
+                          SizedBox(
+                            height: 12,
+                          ),
+                          TechStackItem(text: 'iOS'),
+                          SizedBox(
+                            height: 12,
+                          ),
+                          TechStackItem(text: 'ReactNative'),
+                        ],
                       ),
                     ],
                   ),
@@ -175,31 +173,6 @@ class _AboutState extends State<About> {
           ),
         ),
       ),
-    );
-  }
-
-  Widget _techItem(String value, BuildContext context) {
-    return Row(
-      children: [
-        Icon(
-          Icons.ac_unit_sharp,
-          size: CommonFunction.isApp(context) ? 20 : 16,
-          color: Constants.green,
-        ),
-        SizedBox(
-          width: 8,
-        ),
-        Text(
-          value,
-          overflow: TextOverflow.ellipsis,
-          style: TextStyle(
-            fontSize: CommonFunction.isApp(context) ? 18 : 16,
-            color: Constants.slate,
-            fontFamily: 'FiraSans',
-            fontWeight: FontWeight.w400,
-          ),
-        ),
-      ],
     );
   }
 }
