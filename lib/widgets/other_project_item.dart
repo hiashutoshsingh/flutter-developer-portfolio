@@ -36,13 +36,15 @@ class OtherProjectItem extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                        fontSize: CommonFunction.isApp(context) ? 20 : 16,
-                        fontWeight: FontWeight.w600,
-                        color: Constants.white,
-                        fontFamily: 'FiraSans',
+                    Flexible(
+                      child: Text(
+                        title,
+                        style: TextStyle(
+                          fontSize: CommonFunction.isApp(context) ? 20 : 16,
+                          fontWeight: FontWeight.w600,
+                          color: Constants.white,
+                          fontFamily: 'FiraSans',
+                        ),
                       ),
                     ),
                     InkWell(
