@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   url_launcher: 5.7.10
-  particles_flutter: 0.1.1
+  particles_flutter: 0.1.4
   flutter_svg: 0.22.0
 
 
