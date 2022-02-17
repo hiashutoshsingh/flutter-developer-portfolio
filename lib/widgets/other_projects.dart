@@ -65,23 +65,25 @@ class _OtherProjectsState extends State<OtherProjects> {
               Center(
                 child: Wrap(
                   crossAxisAlignment: WrapCrossAlignment.center,
+                  spacing: 16,
+                  runSpacing: 16,
                   children: [
-                    OtherProjectItem(
+                    OtherNoteworthyProjectItem(
                       title: _titleOtherProject[0],
                       description: _subTitleOtherProject[0],
                       url: _link[0],
                     ),
-                    OtherProjectItem(
+                    OtherNoteworthyProjectItem(
                       title: _titleOtherProject[1],
                       description: _subTitleOtherProject[1],
                       url: _link[1],
                     ),
-                    OtherProjectItem(
+                    OtherNoteworthyProjectItem(
                       title: _titleOtherProject[2],
                       description: _subTitleOtherProject[2],
                       url: _link[2],
                     ),
-                    OtherProjectItem(
+                    OtherNoteworthyProjectItem(
                       title: _titleOtherProject[3],
                       description: _subTitleOtherProject[3],
                       url: _link[3],
