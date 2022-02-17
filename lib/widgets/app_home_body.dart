@@ -6,7 +6,7 @@ import 'package:flutter_developer_portfolio/widgets/main_page/introduction.dart'
 import 'package:flutter_developer_portfolio/widgets/main_page/projects.dart';
 import 'package:flutter_developer_portfolio/widgets/project_showcase.dart';
 
-import 'other_projects.dart';
+import 'other_noteworthy_projects/other_projects.dart';
 
 class AppHomeBody extends StatelessWidget {
   final PageController pageController;

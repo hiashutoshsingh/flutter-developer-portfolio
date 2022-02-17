@@ -1,8 +1,6 @@
 name: flutter_developer_portfolio
 description: Flutter Developer Portfolio
-
 publish_to: 'none'
-
 version: 0.0.1+1
 
 environment:
@@ -11,10 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  url_launcher: 5.7.10
+  url_launcher: 6.0.20
   particles_flutter: 0.1.4
-  flutter_svg: 0.22.0
-
+  flutter_svg: 1.0.3
 
 
 flutter:

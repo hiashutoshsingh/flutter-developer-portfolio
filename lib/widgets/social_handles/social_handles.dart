@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_developer_portfolio/utils/common_functions.dart';
 import 'package:flutter_developer_portfolio/utils/constants.dart';
 
-import '../utils/constants.dart';
+import '../../utils/constants.dart';
 import 'social_handle_item.dart';
 
 class SocialHandles extends StatefulWidget {
@@ -20,6 +20,9 @@ class _SocialHandlesState extends State<SocialHandles> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
           )
         : Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: _socialList(),
           );
   }
@@ -30,44 +33,44 @@ class _SocialHandlesState extends State<SocialHandles> {
         assetName: 'github',
         socialHandleUrl: Constants.githubUrl,
       ),
-      SizedBox(
-        height: 32,
-      ),
+      // SizedBox(
+      //   height: 32,
+      // ),
       SocialHandleItem(
         assetName: 'linkedin',
         socialHandleUrl: Constants.linkedinUrl,
       ),
-      SizedBox(
-        height: 32,
-      ),
+      // SizedBox(
+      //   height: 32,
+      // ),
       SocialHandleItem(
         assetName: 'medium',
         socialHandleUrl: Constants.mediumUrl,
       ),
-      SizedBox(
-        height: 32,
-      ),
+      // SizedBox(
+      //   height: 32,
+      // ),
       SocialHandleItem(
         assetName: 'twitter',
         socialHandleUrl: Constants.twitterUrl,
       ),
-      SizedBox(
-        height: 32,
-      ),
+      // SizedBox(
+      //   height: 32,
+      // ),
       SocialHandleItem(
         assetName: 'instagram',
         socialHandleUrl: Constants.instagramUrl,
       ),
-      SizedBox(
-        height: 32,
-      ),
+      // SizedBox(
+      //   height: 32,
+      // ),
       SocialHandleItem(
         assetName: 'facebook',
         socialHandleUrl: Constants.facebookUrl,
       ),
-      SizedBox(
-        height: 16,
-      ),
+      // SizedBox(
+      //   height: 16,
+      // ),
       CommonFunction.isApp(context)
           ? InkWell(
               onTap: () {

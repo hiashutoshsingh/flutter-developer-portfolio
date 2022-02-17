@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../utils/common_functions.dart';
-import '../utils/constants.dart';
+import '../../utils/common_functions.dart';
+import '../../utils/constants.dart';
 
 class SocialHandleItem extends StatefulWidget {
   final String socialHandleUrl;
@@ -20,12 +20,16 @@ class SocialHandleItem extends StatefulWidget {
 class _SocialHandleItemState extends State<SocialHandleItem> {
   Color _iconColor;
   double _iconSize;
+  double _animatedPaddingValueBottom;
+  double _animatedPaddingValueTop;
 
   @override
   void initState() {
+    super.initState();
     _iconColor = Constants.lightestSlate;
     _iconSize = 24;
-    super.initState();
+    _animatedPaddingValueBottom = 0;
+    _animatedPaddingValueTop = 24;
   }
 
   @override
@@ -38,18 +42,30 @@ class _SocialHandleItemState extends State<SocialHandleItem> {
         if (value) {
           setState(() {
             _iconColor = Constants.green;
+            _animatedPaddingValueTop = 18;
+            _animatedPaddingValueBottom = 6;
           });
         } else {
           setState(() {
             _iconColor = Constants.lightestSlate;
+            _animatedPaddingValueTop = 24;
+            _animatedPaddingValueBottom = 0;
           });
         }
       },
-      child: SvgPicture.asset(
-        'asset/${widget.assetName}.svg',
-        width: _iconSize,
-        height: _iconSize,
-        color: _iconColor,
+      child: AnimatedPadding(
+        curve: Curves.easeIn,
+        padding: EdgeInsets.only(
+          top: _animatedPaddingValueTop,
+          bottom: _animatedPaddingValueBottom,
+        ),
+        duration: Duration(milliseconds: 100),
+        child: SvgPicture.asset(
+          'asset/${widget.assetName}.svg',
+          width: _iconSize,
+          height: _iconSize,
+          color: _iconColor,
+        ),
       ),
     );
   }

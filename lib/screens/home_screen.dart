@@ -12,9 +12,9 @@ import '../widgets/main_page/experience.dart';
 import '../widgets/main_page/introduction.dart';
 import '../widgets/main_page/projects.dart';
 import '../widgets/mobile_app_bar.dart';
-import '../widgets/other_projects.dart';
+import '../widgets/other_noteworthy_projects/other_projects.dart';
 import '../widgets/project_showcase.dart';
-import '../widgets/social_handles.dart';
+import '../widgets/social_handles/social_handles.dart';
 import '../widgets/web_app_bar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -128,6 +128,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           SocialHandles(),
+                          SizedBox(
+                            height: 16,
+                          ),
                           BottomLineWidget(),
                         ],
                       ),
