@@ -117,74 +117,86 @@ class _HomeScreenState extends State<HomeScreen> {
               Container(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 48,
+                    horizontal: 8,
                   ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          SocialHandles(),
-                          SizedBox(
-                            height: 16,
-                          ),
-                          BottomLineWidget(),
-                        ],
+                  child: RawScrollbar(
+                    controller: _pageController,
+                    thickness: 8,
+                    interactive: true,
+                    thumbColor: Constants.green,
+                    radius: Radius.circular(8),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 40,
                       ),
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 128),
-                          child: PageView(
-                            scrollDirection: Axis.vertical,
-                            controller: _pageController,
-                            pageSnapping: false,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisSize: MainAxisSize.max,
                             children: [
-                              Introduction(),
-                              AboutMeWidget(),
-                              Experience(),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 48),
-                                child: Projects(),
+                              SocialHandles(),
+                              SizedBox(
+                                height: 16,
                               ),
-
-                              /// todo pass this through constants
-                              _showcaseWidget(
-                                'YourSkool',
-                                'YourSkool gives a platform to practise english for children aged 5-12yrs.',
-                                appUrl: 'https://play.google.com/store/apps/details?id=co.yourskool',
-                              ),
-                              _showcaseWidget(
-                                'Intellect',
-                                'Intellect provides you platform to prepare for UPSC.',
-                                appUrl: 'https://play.google.com/store/apps/details?id=com.intellectias.gradeupProto',
-                              ),
-                              _showcaseWidget(
-                                'Intellect Dashboard',
-                                'Dashboard to mange your courses, videos, tests and materials for Intellect app.',
-                              ),
-                              _showcaseWidget(
-                                'Batuni',
-                                'Batuni connects you to other users in topic based anonymous audio chats.',
-                                appUrl: 'https://play.google.com/store/apps/details?id=app.batuni',
-                              ),
-                              _showcaseWidget(
-                                'Duit',
-                                'Duit provides you to share contact information with anyone to expand your reach.',
-                                appUrl: 'https://play.google.com/store/apps/details?id=io.duit.ecards',
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 48),
-                                child: OtherProjects(),
-                              ),
+                              BottomLineWidget(),
                             ],
                           ),
-                        ),
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 128),
+                              child: PageView(
+                                scrollDirection: Axis.vertical,
+                                controller: _pageController,
+                                pageSnapping: false,
+                                children: [
+                                  Introduction(),
+                                  AboutMeWidget(),
+                                  Experience(),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(vertical: 48),
+                                    child: Projects(),
+                                  ),
+
+                                  /// todo pass this through constants
+                                  _showcaseWidget(
+                                    'YourSkool',
+                                    'YourSkool gives a platform to practise english for children aged 5-12yrs.',
+                                    appUrl: 'https://play.google.com/store/apps/details?id=co.yourskool',
+                                  ),
+                                  _showcaseWidget(
+                                    'Intellect',
+                                    'Intellect provides you platform to prepare for UPSC.',
+                                    appUrl: 'https://play.google.com/store/apps/details?id=com.intellectias.gradeupProto',
+                                  ),
+                                  _showcaseWidget(
+                                    'Intellect Dashboard',
+                                    'Dashboard to mange your courses, videos, tests and materials for Intellect app.',
+                                  ),
+                                  _showcaseWidget(
+                                    'Batuni',
+                                    'Batuni connects you to other users in topic based anonymous audio chats.',
+                                    appUrl: 'https://play.google.com/store/apps/details?id=app.batuni',
+                                  ),
+                                  _showcaseWidget(
+                                    'Duit',
+                                    'Duit provides you to share contact information with anyone to expand your reach.',
+                                    appUrl: 'https://play.google.com/store/apps/details?id=io.duit.ecards',
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(vertical: 48),
+                                    child: OtherProjects(),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          EmailWidget(),
+                        ],
                       ),
-                      EmailWidget(),
-                    ],
+                    ),
                   ),
                 ),
               ),

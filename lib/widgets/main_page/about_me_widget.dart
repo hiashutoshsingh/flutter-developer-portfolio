@@ -165,7 +165,7 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(6),
           child: Image.asset(
-            "asset/profile.png",
+            "asset/profile.jpeg",
             colorBlendMode: _blendMode,
             color: Constants.green,
             height: CommonFunction.isApp(context) ? 120 : null,

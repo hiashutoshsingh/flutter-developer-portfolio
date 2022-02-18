@@ -33,44 +33,30 @@ class _SocialHandlesState extends State<SocialHandles> {
         assetName: 'github',
         socialHandleUrl: Constants.githubUrl,
       ),
-      // SizedBox(
-      //   height: 32,
-      // ),
-      SocialHandleItem(
-        assetName: 'linkedin',
-        socialHandleUrl: Constants.linkedinUrl,
-      ),
-      // SizedBox(
-      //   height: 32,
-      // ),
       SocialHandleItem(
         assetName: 'medium',
         socialHandleUrl: Constants.mediumUrl,
       ),
-      // SizedBox(
-      //   height: 32,
-      // ),
+      SocialHandleItem(
+        assetName: 'stackoverflow',
+        socialHandleUrl: Constants.stackoverflowUrl,
+      ),
+      SocialHandleItem(
+        assetName: 'linkedin',
+        socialHandleUrl: Constants.linkedinUrl,
+      ),
       SocialHandleItem(
         assetName: 'twitter',
         socialHandleUrl: Constants.twitterUrl,
       ),
-      // SizedBox(
-      //   height: 32,
-      // ),
       SocialHandleItem(
         assetName: 'instagram',
         socialHandleUrl: Constants.instagramUrl,
       ),
-      // SizedBox(
-      //   height: 32,
-      // ),
       SocialHandleItem(
         assetName: 'facebook',
         socialHandleUrl: Constants.facebookUrl,
       ),
-      // SizedBox(
-      //   height: 16,
-      // ),
       CommonFunction.isApp(context)
           ? InkWell(
               onTap: () {
