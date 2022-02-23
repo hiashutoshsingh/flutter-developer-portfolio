@@ -3,22 +3,10 @@ import 'package:flutter_developer_portfolio/utils/constants.dart';
 import 'package:flutter_developer_portfolio/widgets/sub_header.dart';
 
 import '../../utils/common_functions.dart';
+import '../profile_image_widget.dart';
 import '../tech_stack_item.dart';
 
-class AboutMeWidget extends StatefulWidget {
-  @override
-  _AboutMeWidgetState createState() => _AboutMeWidgetState();
-}
-
-class _AboutMeWidgetState extends State<AboutMeWidget> {
-  BlendMode _blendMode;
-
-  @override
-  void initState() {
-    super.initState();
-    _blendMode = BlendMode.modulate;
-  }
-
+class AboutMeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -42,7 +30,7 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   /// todo move all contents to constants
-                  CommonFunction.isApp(context) ? Center(child: _profileImage()) : Container(),
+                  CommonFunction.isApp(context) ? Center(child: ProfileImageWidget()) : Container(),
                   Text(
                     "Hello! I'm Ashutosh, a software developer based in India.",
                     style: TextStyle(
@@ -105,7 +93,7 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
                           SizedBox(
                             height: 12,
                           ),
-                          TechStackItem(text: 'JavaScript'),
+                          TechStackItem(text: 'Python'),
                         ],
                       ),
                       SizedBox(
@@ -133,46 +121,12 @@ class _AboutMeWidgetState extends State<AboutMeWidget> {
             !CommonFunction.isApp(context)
                 ? Flexible(
                     flex: 3,
-                    child: _profileImage(),
+                    child: ProfileImageWidget(),
                   )
                 : Container()
           ],
         ),
       ],
-    );
-  }
-
-  Widget _profileImage() {
-    return InkWell(
-      splashColor: Colors.transparent,
-      hoverColor: Colors.transparent,
-      focusColor: Colors.transparent,
-      highlightColor: Colors.transparent,
-      onTap: () {},
-      onHover: (val) {
-        if (val) {
-          setState(() {
-            _blendMode = BlendMode.dstOver;
-          });
-        } else {
-          setState(() {
-            _blendMode = BlendMode.modulate;
-          });
-        }
-      },
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16) + EdgeInsets.only(bottom: CommonFunction.isApp(context) ? 8 : 32),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(6),
-          child: Image.asset(
-            "asset/profile.jpeg",
-            colorBlendMode: _blendMode,
-            color: Constants.green,
-            height: CommonFunction.isApp(context) ? 120 : null,
-            width: CommonFunction.isApp(context) ? 120 : null,
-          ),
-        ),
-      ),
     );
   }
 }

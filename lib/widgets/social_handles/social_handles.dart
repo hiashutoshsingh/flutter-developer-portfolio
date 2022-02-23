@@ -18,6 +18,7 @@ class _SocialHandlesState extends State<SocialHandles> {
             mainAxisSize: MainAxisSize.max,
             children: _socialList(),
             mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
           )
         : Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -62,10 +63,13 @@ class _SocialHandlesState extends State<SocialHandles> {
               onTap: () {
                 CommonFunction.openMail();
               },
-              child: Icon(
-                Icons.email_outlined,
-                size: 24,
-                color: Constants.slate,
+              child: Padding(
+                padding: EdgeInsets.only(top: 22),
+                child: Icon(
+                  Icons.email_outlined,
+                  size: 24,
+                  color: Constants.lightestSlate,
+                ),
               ),
             )
           : Container(),

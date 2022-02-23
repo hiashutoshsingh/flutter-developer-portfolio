@@ -35,6 +35,9 @@ class _SocialHandleItemState extends State<SocialHandleItem> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      splashColor: Colors.transparent,
+      hoverColor: Colors.transparent,
+      highlightColor: Colors.transparent,
       onTap: () {
         CommonFunction.openFromUrl(widget.socialHandleUrl);
       },

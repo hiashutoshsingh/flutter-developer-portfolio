@@ -68,7 +68,7 @@ class WebAppBar extends StatelessWidget {
                   child: _appBarItem(
                     '3',
                     'Work',
-                    Icons.build,
+                    Icons.handyman_outlined,
                   ),
                 ),
                 SizedBox(

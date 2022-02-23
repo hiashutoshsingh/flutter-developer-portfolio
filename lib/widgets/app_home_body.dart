@@ -105,10 +105,10 @@ class AppHomeBody extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-              left: CommonFunction.isApp(context) ? 16 : 0,
-              top: 48,
-              bottom: 48,
-            ),
+                  top: 48,
+                  bottom: 48,
+                ) +
+                (CommonFunction.isApp(context) ? EdgeInsets.symmetric(horizontal: 16) : EdgeInsets.zero),
             child: OtherProjects(),
           ),
         ],

@@ -29,7 +29,7 @@ class _MobileAppBarState extends State<MobileAppBar> {
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             InkWell(
               onTap: () => widget.appBarClick(_toggle, 0),
@@ -62,7 +62,7 @@ class _MobileAppBarState extends State<MobileAppBar> {
                   child: Icon(
                     Icons.view_headline_outlined,
                     color: Constants.slate,
-                    size: 32,
+                    size: 24,
                   ),
                 ),
               ),
@@ -91,7 +91,7 @@ class _MobileAppBarState extends State<MobileAppBar> {
                     _appBarItem(
                       'Work',
                       3,
-                      Icons.build,
+                      Icons.handyman_outlined,
                     ),
                   ],
                 ),

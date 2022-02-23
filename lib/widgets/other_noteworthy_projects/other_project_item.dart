@@ -17,8 +17,8 @@ class OtherNoteworthyProjectItem extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Container(
-      width: size.width * .3,
-      height: size.height * .2,
+      width: CommonFunction.isApp(context) ? null : size.width * .3,
+      height: CommonFunction.isApp(context) ? null : size.height * .2,
       child: Card(
         color: Constants.lightNavy,
         elevation: 5,
