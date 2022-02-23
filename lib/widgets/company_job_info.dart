@@ -25,24 +25,24 @@ class CompanyJobInfo extends StatelessWidget {
             height: 16,
           ),
           _jobRole(
-              'Developed and shipped CBO application used by community organization to help manage social risk factors on Android, iOS and Web',
+              'Currently working on the Chat-SDK and building Design system components in Flutter, which is used in a variety of Innovaccer mobile products as well as a Telemedicine application.',
               context),
           SizedBox(
             height: 12,
           ),
           _jobRole(
-              'Communicate with multi-disciplinary teams of engineers, designers and product managers on a daily basis', context),
+              'On Android, iOS, and the Web, I developed and released the CBO app, which is utilised by community organisations to assist manage social risk factors.',
+              context),
           SizedBox(
             height: 12,
           ),
-          _jobRole(
-              'Having multiple discussions and demos within team to explore in flutter and make our existing apps more scalable',
+          _jobRole('On a daily basis, I communicate with multi-disciplinary teams of engineers, designers, and product managers.',
               context),
           SizedBox(
             height: 12,
           ),
           _jobRole(
-              'Currently working on design system components using flutter which will be used in multiple products in app at Innovaccer',
+              'Multiple conversations and demos within the team to learn more about flutter and make our existing apps more scalable.',
               context),
         ],
       );
@@ -59,16 +59,17 @@ class CompanyJobInfo extends StatelessWidget {
             height: 16,
           ),
           _jobRole(
-              'Builded 2.0 version of Zappfresh from Scratch under the mentorship of Tech Lead and Designer by following Agile methods.',
+              'Under the guidance of a Tech Lead and a Designer, I built the 2.0 version of Zappfresh from the ground up using Agile methodologies.',
               context),
           SizedBox(
             height: 12,
           ),
-          _jobRole('Built and designed basic inventory app using Flutter used by people at various hubs of Zappfresh', context),
+          _jobRole("Built and created a basic inventory app in Flutter that is utilised by people at Zappfresh's numerous hubs.",
+              context),
           SizedBox(
             height: 12,
           ),
-          _jobRole('Responsible for the design, build, debug & maintenance of current app of Zappfresh', context),
+          _jobRole("Responsible for the design, development, testing, and upkeep of Zappfresh's current app.", context),
         ],
       );
     } else if (selectedIndex == 2) {

@@ -13,7 +13,7 @@ class WebAppBar extends StatelessWidget {
     return Container(
       color: Constants.navy,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32),
+        padding: EdgeInsets.symmetric(horizontal: 32),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

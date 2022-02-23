@@ -44,7 +44,7 @@ class AboutMeWidget extends StatelessWidget {
                     height: 16,
                   ),
                   Text(
-                    'I am currently developing mobile apps using Flutter and has delivered 10+ projects in mobile and web. \nI am currently working as Software Developer at Innovaccer and also do some side projects to enhance my skills in mobile.',
+                    "I'm now working on mobile apps with Flutter and have completed over ten mobile and web projects. \nI currently work at Innovaccer as a Software Developer and also doing some side projects to enhance my mobile skills.",
                     style: TextStyle(
                       fontSize: CommonFunction.isApp(context) ? 18 : 16,
                       color: Constants.slate,
@@ -56,7 +56,7 @@ class AboutMeWidget extends StatelessWidget {
                     height: 8,
                   ),
                   Text(
-                    'I also love to produce music beats, investing sometime in learning and making beats using Fl Studio.',
+                    'I also enjoy producing music beats and have spent time learning how to use Fl Studio to do so.',
                     style: TextStyle(
                       fontSize: CommonFunction.isApp(context) ? 18 : 16,
                       color: Constants.slate,
@@ -68,7 +68,7 @@ class AboutMeWidget extends StatelessWidget {
                     height: 16,
                   ),
                   Text(
-                    "Some technologies which I have worked on are:",
+                    "I've worked on the following technologies:",
                     style: TextStyle(
                       fontSize: CommonFunction.isApp(context) ? 18 : 16,
                       color: Constants.slate,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_developer_portfolio/utils/common_functions.dart';
 import 'package:flutter_developer_portfolio/utils/constants.dart';
 
 import 'other_project_item.dart';
@@ -94,6 +95,46 @@ class _OtherProjectsState extends State<OtherProjects> {
             ],
           ),
         ),
+        CommonFunction.isApp(context)
+            ? Padding(
+                padding: const EdgeInsets.only(top: 16),
+                child: InkWell(
+                  onTap: () {
+                    CommonFunction.openFromUrl('https://brittanychiang.com/');
+                  },
+                  child: Card(
+                    color: Constants.slate,
+                    child: Center(
+                      child: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text(
+                              'Shout-out to Brittany Chiang',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                                color: Constants.white,
+                                fontFamily: 'FiraSans',
+                              ),
+                            ),
+                            SizedBox(
+                              width: 8,
+                            ),
+                            Icon(
+                              Icons.open_in_new,
+                              size: 20,
+                              color: Constants.green,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            : Container(),
       ],
     );
   }

@@ -62,7 +62,7 @@ class _SocialHandleItemState extends State<SocialHandleItem> {
           top: _animatedPaddingValueTop,
           bottom: _animatedPaddingValueBottom,
         ),
-        duration: Duration(milliseconds: 100),
+        duration: Duration(milliseconds: 200),
         child: SvgPicture.asset(
           'asset/${widget.assetName}.svg',
           width: _iconSize,

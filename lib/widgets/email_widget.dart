@@ -71,6 +71,30 @@ class _EmailWidgetState extends State<EmailWidget> {
           ),
         ),
         SizedBox(
+          height: 24,
+        ),
+        !CommonFunction.isApp(context)
+            ? InkWell(
+                onTap: () {
+                  CommonFunction.openFromUrl('https://brittanychiang.com/');
+                },
+                child: Tooltip(
+                  message: 'Shout-out to Brittany Chiang',
+                  textStyle: TextStyle(
+                    fontWeight: FontWeight.w400,
+                    fontSize: 12,
+                    color: Constants.green,
+                    fontFamily: 'FiraSans',
+                  ),
+                  child: Icon(
+                    Icons.open_in_new,
+                    size: 20,
+                    color: Constants.lightestSlate,
+                  ),
+                ),
+              )
+            : Container(),
+        SizedBox(
           height: 16,
         ),
         Padding(
