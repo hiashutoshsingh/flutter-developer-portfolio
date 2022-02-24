@@ -2,6 +2,9 @@
 
 My Portfolio built on Flutter
 
-Checkout - https://portfolio-b1887.web.app/
+Live Demo - https://portfolio-b1887.web.app/
+
+
+Inspiration: https://brittanychiang.com/
 
 
