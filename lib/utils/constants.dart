@@ -16,7 +16,7 @@ class Constants {
   static final String twitterUrl = 'https://twitter.com/hiashutoshsingh/';
   static final String instagramUrl = 'https://www.instagram.com/hiashutoshsingh/';
   static final String facebookUrl = 'https://www.facebook.com/hiashutoshsingh/';
-  static final String mediumUrl = 'https://medium.com/@hiashutosh';
+  static final String mediumUrl = 'https://medium.com/@hiashutoshsingh';
   static final String stackoverflowUrl = 'https://stackoverflow.com/users/6875249/hiashutoshsingh';
   static final String email = 'hiashutoshkumarsingh@gmail.com';
 }
