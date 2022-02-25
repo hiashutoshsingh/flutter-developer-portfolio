@@ -183,7 +183,7 @@ class CompanyJobInfo extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 2),
+          padding: EdgeInsets.only(top: 2),
           child: Icon(
             Icons.play_arrow,
             size: CommonFunction.isApp(context) ? 20 : 16,

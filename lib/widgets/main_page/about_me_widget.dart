@@ -12,6 +12,7 @@ class AboutMeWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
       children: [
         SubHeader(
           number: '01.',
@@ -28,22 +29,14 @@ class AboutMeWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  CommonFunction.isApp(context) ? Center(child: ProfileImageWidget()) : Container(),
-
-                  /// todo move all contents to constants
-                  Text(
-                    "Hello! I'm Ashutosh, a software developer based in India.",
-                    style: TextStyle(
-                      fontSize: CommonFunction.isApp(context) ? 18 : 16,
-                      color: Constants.slate,
-                      fontFamily: 'FiraSans',
-                      fontWeight: FontWeight.w400,
+                  if (CommonFunction.isApp(context)) ...[
+                    Center(child: ProfileImageWidget()),
+                    SizedBox(
+                      height: 16,
                     ),
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
+                  ],
                   Text(
                     "I'm now working on mobile apps with Flutter and have completed over ten mobile and web projects. \nI currently work at Innovaccer as a Software Developer and also doing some side projects to enhance my mobile skills.",
                     style: TextStyle(
@@ -68,60 +61,64 @@ class AboutMeWidget extends StatelessWidget {
                   SizedBox(
                     height: 16,
                   ),
-                  Text(
-                    "I've worked on the following technologies:",
-                    style: TextStyle(
-                      fontSize: CommonFunction.isApp(context) ? 18 : 16,
-                      color: Constants.slate,
-                      fontFamily: 'FiraSans',
-                      fontWeight: FontWeight.w400,
+                  Flexible(
+                    child: Text(
+                      "I've worked on the following technologies:",
+                      style: TextStyle(
+                        fontSize: CommonFunction.isApp(context) ? 18 : 16,
+                        color: Constants.slate,
+                        fontFamily: 'FiraSans',
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                   ),
                   SizedBox(
                     height: 16,
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          TechStackItem(text: 'Flutter'),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          TechStackItem(text: 'Android'),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          TechStackItem(text: 'Python'),
-                        ],
-                      ),
-                      SizedBox(
-                        width: 32,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          TechStackItem(text: 'Flutter-Web'),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          TechStackItem(text: 'iOS'),
-                          SizedBox(
-                            height: 12,
-                          ),
-                          TechStackItem(text: 'ReactNative'),
-                        ],
-                      ),
-                    ],
+                  Flexible(
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            TechStackItem(text: 'Flutter'),
+                            SizedBox(
+                              height: CommonFunction.isApp(context) ? 8 : 12,
+                            ),
+                            TechStackItem(text: 'Android'),
+                            SizedBox(
+                              height: CommonFunction.isApp(context) ? 8 : 12,
+                            ),
+                            TechStackItem(text: 'Python'),
+                          ],
+                        ),
+                        SizedBox(
+                          width: 32,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            TechStackItem(text: 'Flutter-Web'),
+                            SizedBox(
+                              height: CommonFunction.isApp(context) ? 8 : 12,
+                            ),
+                            TechStackItem(text: 'iOS'),
+                            SizedBox(
+                              height: CommonFunction.isApp(context) ? 8 : 12,
+                            ),
+                            TechStackItem(text: 'ReactNative'),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
             ),
             !CommonFunction.isApp(context)
                 ? Flexible(
-                    flex: 3,
+                    flex: 4,
                     child: ProfileImageWidget(),
                   )
                 : Container()

@@ -4,14 +4,16 @@ import 'package:flutter_developer_portfolio/utils/common_functions.dart';
 class ProfileImageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 16) + EdgeInsets.only(bottom: CommonFunction.isApp(context) ? 8 : 32),
+      padding: EdgeInsets.symmetric(horizontal: 16),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(CommonFunction.isApp(context) ? 8 : 6),
         child: Image.asset(
           "asset/profile.jpeg",
-          height: CommonFunction.isApp(context) ? 120 : null,
-          width: CommonFunction.isApp(context) ? 120 : null,
+          height: CommonFunction.isApp(context) ? size.height * .3 : size.height * .3,
+          width: CommonFunction.isApp(context) ? size.width * .6 : size.height * .6,
+          fit: BoxFit.cover,
         ),
       ),
     );

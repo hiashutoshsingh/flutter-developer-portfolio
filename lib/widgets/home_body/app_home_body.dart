@@ -17,102 +17,100 @@ class AppHomeBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: PageView(
-        scrollDirection: Axis.vertical,
-        controller: pageController,
-        pageSnapping: false,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(
-              left: 16,
-              right: 4,
-            ),
-            child: Introduction(),
+    return PageView(
+      scrollDirection: Axis.vertical,
+      controller: pageController,
+      pageSnapping: false,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(
+            left: 16,
+            right: 4,
           ),
-          Padding(
-            padding: const EdgeInsets.only(
-              left: 16,
-              right: 16,
-            ),
-            child: AboutMeWidget(),
+          child: Introduction(),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(
+            left: 16,
+            right: 16,
           ),
-          Padding(
-            padding: const EdgeInsets.only(
-              left: 16,
-              right: 16,
-            ),
-            child: Experience(),
+          child: AboutMeWidget(),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(
+            left: 16,
+            right: 16,
           ),
-          Padding(
-            padding: EdgeInsets.only(
-              left: CommonFunction.isApp(context) ? 16 : 0,
-              top: 48,
-              bottom: 48,
-            ),
-            child: Projects(),
+          child: Experience(),
+        ),
+        Padding(
+          padding: EdgeInsets.only(
+            left: CommonFunction.isApp(context) ? 16 : 0,
+            top: 48,
+            bottom: 48,
           ),
+          child: Projects(),
+        ),
 
-          /// todo generic
-          Padding(
-            padding: EdgeInsets.only(
-              left: CommonFunction.isApp(context) ? 16 : 0,
-            ),
-            child: _showcaseWidget(
-              'YourSkool',
-              'YourSkool gives a platform to practise english for children aged 5-12yrs.',
-              appUrl: 'https://play.google.com/store/apps/details?id=co.yourskool',
-            ),
+        /// todo generic
+        Padding(
+          padding: EdgeInsets.only(
+            left: CommonFunction.isApp(context) ? 16 : 0,
           ),
-          Padding(
-            padding: EdgeInsets.only(
-              left: CommonFunction.isApp(context) ? 16 : 0,
-            ),
-            child: _showcaseWidget(
-              'Intellect',
-              'Intellect provides you platform to prepare for UPSC.',
-              appUrl: 'https://play.google.com/store/apps/details?id=com.intellectias.gradeupProto',
-            ),
+          child: _showcaseWidget(
+            'YourSkool',
+            'YourSkool gives a platform to practise english for children aged 5-12yrs.',
+            appUrl: 'https://play.google.com/store/apps/details?id=co.yourskool',
           ),
-          Padding(
-            padding: EdgeInsets.only(
-              left: CommonFunction.isApp(context) ? 16 : 0,
-            ),
-            child: _showcaseWidget(
-              'Intellect Dashboard',
-              'Dashboard to mange your courses, videos, tests and materials for Intellect app.',
-            ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(
+            left: CommonFunction.isApp(context) ? 16 : 0,
           ),
-          Padding(
-            padding: EdgeInsets.only(
-              left: CommonFunction.isApp(context) ? 16 : 0,
-            ),
-            child: _showcaseWidget(
-              'Batuni',
-              'Batuni connects you to other users in topic based anonymous audio chats.',
-              appUrl: 'https://play.google.com/store/apps/details?id=app.batuni',
-            ),
+          child: _showcaseWidget(
+            'Intellect',
+            'Intellect provides you platform to prepare for UPSC.',
+            appUrl: 'https://play.google.com/store/apps/details?id=com.intellectias.gradeupProto',
           ),
-          Padding(
-            padding: EdgeInsets.only(
-              left: CommonFunction.isApp(context) ? 16 : 0,
-            ),
-            child: _showcaseWidget(
-              'Duit',
-              'Duit provides you to share contact information with anyone to expand your reach.',
-              appUrl: 'https://play.google.com/store/apps/details?id=io.duit.ecards',
-            ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(
+            left: CommonFunction.isApp(context) ? 16 : 0,
           ),
-          Padding(
-            padding: EdgeInsets.only(
-                  top: 48,
-                  bottom: 48,
-                ) +
-                (CommonFunction.isApp(context) ? EdgeInsets.symmetric(horizontal: 16) : EdgeInsets.zero),
-            child: OtherProjects(),
+          child: _showcaseWidget(
+            'Intellect Dashboard',
+            'Dashboard to mange your courses, videos, tests and materials for Intellect app.',
           ),
-        ],
-      ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(
+            left: CommonFunction.isApp(context) ? 16 : 0,
+          ),
+          child: _showcaseWidget(
+            'Batuni',
+            'Batuni connects you to other users in topic based anonymous audio chats.',
+            appUrl: 'https://play.google.com/store/apps/details?id=app.batuni',
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(
+            left: CommonFunction.isApp(context) ? 16 : 0,
+          ),
+          child: _showcaseWidget(
+            'Duit',
+            'Duit provides you to share contact information with anyone to expand your reach.',
+            appUrl: 'https://play.google.com/store/apps/details?id=io.duit.ecards',
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(
+                top: 48,
+                bottom: 48,
+              ) +
+              (CommonFunction.isApp(context) ? EdgeInsets.symmetric(horizontal: 16) : EdgeInsets.zero),
+          child: OtherProjects(),
+        ),
+      ],
     );
   }
 

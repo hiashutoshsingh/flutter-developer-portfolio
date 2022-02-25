@@ -14,7 +14,7 @@ class TechStackItem extends StatelessWidget {
     return Row(
       children: [
         Icon(
-          Icons.ac_unit_sharp,
+          Icons.play_arrow,
           size: CommonFunction.isApp(context) ? 20 : 14,
           color: Constants.green,
         ),
