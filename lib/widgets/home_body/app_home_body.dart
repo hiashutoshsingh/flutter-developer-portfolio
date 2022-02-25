@@ -20,7 +20,6 @@ class AppHomeBody extends StatelessWidget {
     return PageView(
       scrollDirection: Axis.vertical,
       controller: pageController,
-      pageSnapping: false,
       children: [
         Padding(
           padding: const EdgeInsets.only(

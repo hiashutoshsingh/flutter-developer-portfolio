@@ -87,7 +87,7 @@ class WebAppBar extends StatelessWidget {
       children: [
         Icon(
           iconData,
-          size: 20,
+          size: 18,
           color: Constants.green,
         ),
         SizedBox(

@@ -11,8 +11,8 @@ class ProfileImageWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(CommonFunction.isApp(context) ? 8 : 6),
         child: Image.asset(
           "asset/profile.jpeg",
-          height: CommonFunction.isApp(context) ? size.height * .3 : size.height * .3,
-          width: CommonFunction.isApp(context) ? size.width * .6 : size.height * .6,
+          height: CommonFunction.isApp(context) ? size.height * .3 : null,
+          width: CommonFunction.isApp(context) ? size.width * .6 : null,
           fit: BoxFit.cover,
         ),
       ),

@@ -56,7 +56,6 @@ class WebHomeBody extends StatelessWidget {
                     child: PageView(
                       scrollDirection: Axis.vertical,
                       controller: pageController,
-                      pageSnapping: false,
                       children: [
                         Introduction(),
                         AboutMeWidget(),
@@ -70,12 +69,10 @@ class WebHomeBody extends StatelessWidget {
                         _showcaseWidget(
                           'YourSkool',
                           'YourSkool gives a platform to practise english for children aged 5-12yrs.',
-                          appUrl: 'https://play.google.com/store/apps/details?id=co.yourskool',
                         ),
                         _showcaseWidget(
                           'Intellect',
                           'Intellect provides you platform to prepare for UPSC.',
-                          appUrl: 'https://play.google.com/store/apps/details?id=com.intellectias.gradeupProto',
                         ),
                         _showcaseWidget(
                           'Intellect Dashboard',
@@ -89,10 +86,9 @@ class WebHomeBody extends StatelessWidget {
                         _showcaseWidget(
                           'Duit',
                           'Duit provides you to share contact information with anyone to expand your reach.',
-                          appUrl: 'https://play.google.com/store/apps/details?id=io.duit.ecards',
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 48),
+                          padding: EdgeInsets.symmetric(vertical: 48),
                           child: OtherProjects(),
                         ),
                       ],
