@@ -29,8 +29,9 @@ class AboutMeWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  /// todo move all contents to constants
                   CommonFunction.isApp(context) ? Center(child: ProfileImageWidget()) : Container(),
+
+                  /// todo move all contents to constants
                   Text(
                     "Hello! I'm Ashutosh, a software developer based in India.",
                     style: TextStyle(

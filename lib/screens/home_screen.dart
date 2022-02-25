@@ -1,21 +1,14 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_developer_portfolio/widgets/bottom_line_widget.dart';
-import 'package:flutter_developer_portfolio/widgets/email_widget.dart';
+import 'package:flutter_developer_portfolio/widgets/home_body/web_home_body.dart';
 import 'package:particles_flutter/particles_flutter.dart';
 
 import '../utils/common_functions.dart';
 import '../utils/constants.dart';
-import '../widgets/app_home_body.dart';
-import '../widgets/main_page/about_me_widget.dart';
-import '../widgets/main_page/experience.dart';
-import '../widgets/main_page/introduction.dart';
-import '../widgets/main_page/projects.dart';
-import '../widgets/mobile_app_bar.dart';
-import '../widgets/other_noteworthy_projects/other_projects.dart';
-import '../widgets/project_showcase.dart';
+import '../widgets/app_bar/mobile_app_bar.dart';
+import '../widgets/app_bar/web_app_bar.dart';
+import '../widgets/home_body/app_home_body.dart';
 import '../widgets/social_handles/social_handles.dart';
-import '../widgets/web_app_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -114,111 +107,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 pageController: _pageController,
               )
             else
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 8,
-                  ),
-                  child: RawScrollbar(
-                    controller: _pageController,
-                    thickness: 8,
-                    interactive: true,
-                    thumbColor: Constants.green,
-                    radius: Radius.circular(8),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 40,
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              SocialHandles(),
-                              SizedBox(
-                                height: 16,
-                              ),
-                              BottomLineWidget(),
-                            ],
-                          ),
-                          Expanded(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 128),
-                              child: PageView(
-                                scrollDirection: Axis.vertical,
-                                controller: _pageController,
-                                pageSnapping: false,
-                                children: [
-                                  Introduction(),
-                                  AboutMeWidget(),
-                                  Experience(),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(vertical: 48),
-                                    child: Projects(),
-                                  ),
-
-                                  /// todo pass this through constants
-                                  _showcaseWidget(
-                                    'YourSkool',
-                                    'YourSkool gives a platform to practise english for children aged 5-12yrs.',
-                                    appUrl: 'https://play.google.com/store/apps/details?id=co.yourskool',
-                                  ),
-                                  _showcaseWidget(
-                                    'Intellect',
-                                    'Intellect provides you platform to prepare for UPSC.',
-                                    appUrl: 'https://play.google.com/store/apps/details?id=com.intellectias.gradeupProto',
-                                  ),
-                                  _showcaseWidget(
-                                    'Intellect Dashboard',
-                                    'Dashboard to mange your courses, videos, tests and materials for Intellect app.',
-                                  ),
-                                  _showcaseWidget(
-                                    'Batuni',
-                                    'Batuni connects you to other users in topic based anonymous audio chats.',
-                                    appUrl: 'https://play.google.com/store/apps/details?id=app.batuni',
-                                  ),
-                                  _showcaseWidget(
-                                    'Duit',
-                                    'Duit provides you to share contact information with anyone to expand your reach.',
-                                    appUrl: 'https://play.google.com/store/apps/details?id=io.duit.ecards',
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(vertical: 48),
-                                    child: OtherProjects(),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          EmailWidget(),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+              WebHomeBody(
+                pageController: _pageController,
               ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _showcaseWidget(
-    String title,
-    String subtitle, {
-    String appUrl,
-    String github,
-  }) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 48),
-      child: ProjectShowcase(
-        title: title,
-        subTitle: subtitle,
-        playStoreUrl: appUrl,
-        githubUrl: github,
       ),
     );
   }
