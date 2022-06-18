@@ -62,6 +62,7 @@ class _OtherProjectsState extends State<OtherProjects> {
         Expanded(
           child: ListView(
             shrinkWrap: true,
+            physics: ClampingScrollPhysics(),
             children: [
               Center(
                 child: Wrap(
