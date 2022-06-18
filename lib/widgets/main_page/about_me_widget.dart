@@ -22,7 +22,7 @@ class AboutMeWidget extends StatelessWidget {
           height: CommonFunction.isApp(context) ? 16 : 32,
         ),
         Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Flexible(
               flex: 10,
@@ -38,7 +38,7 @@ class AboutMeWidget extends StatelessWidget {
                     ),
                   ],
                   Text(
-                    "I'm now working on mobile apps with Flutter and have completed over ten mobile and web projects. \nI currently work at Innovaccer as a Software Developer and also doing some side projects to enhance my mobile skills.",
+                    "I'm using Flutter to create mobile apps, and I've completed over ten mobile and online projects. \nI presently work as a Software Engineer for Gojek, and I'm also working on various side projects to improve my mobile skills.",
                     style: TextStyle(
                       fontSize: CommonFunction.isApp(context) ? 18 : 16,
                       color: Constants.slate,
@@ -50,7 +50,7 @@ class AboutMeWidget extends StatelessWidget {
                     height: 8,
                   ),
                   Text(
-                    'I also enjoy producing music beats and have spent time learning how to use Fl Studio to do so.',
+                    'I enjoy making music beats and travelling SOLO to new locations :)',
                     style: TextStyle(
                       fontSize: CommonFunction.isApp(context) ? 18 : 16,
                       color: Constants.slate,

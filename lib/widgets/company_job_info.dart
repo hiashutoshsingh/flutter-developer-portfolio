@@ -11,21 +11,43 @@ class CompanyJobInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// todo generic
     if (selectedIndex == 0) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          /// todo generic
-          _position('Software Developer', 'Innovaccer', 'https://innovaccer.com/', context),
+          _position('Software Engineer', 'Gojek', 'https://gojek.com/', context),
           SizedBox(
             height: 8,
           ),
-          _period('March 2020', 'Present', context),
+          _period('June 2022', 'Present', context),
           SizedBox(
             height: 16,
           ),
           _jobRole(
-              'Currently working on the Chat-SDK and building Design system components in Flutter, which is used in a variety of Innovaccer mobile products as well as a Telemedicine application.',
+              'UXE Engineering',
+              context),
+          SizedBox(
+            height: 16,
+          ),
+        ],
+      );
+    }
+    if (selectedIndex == 1) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          /// todo generic
+          _position('Software Developer Engineer I', 'Innovaccer', 'https://innovaccer.com/', context),
+          SizedBox(
+            height: 8,
+          ),
+          _period('March 2020', 'June 2022', context),
+          SizedBox(
+            height: 16,
+          ),
+          _jobRole(
+              'Worked on the Chat-SDK and building Design system components in Flutter, which is used in a variety of Innovaccer mobile products as well as a Telemedicine application.',
               context),
           SizedBox(
             height: 12,
@@ -36,17 +58,17 @@ class CompanyJobInfo extends StatelessWidget {
           SizedBox(
             height: 12,
           ),
-          _jobRole('On a daily basis, I communicate with multi-disciplinary teams of engineers, designers, and product managers.',
+          _jobRole('I worked with multi-disciplinary teams of engineers, designers, and product managers on a daily basis.',
               context),
           SizedBox(
             height: 12,
           ),
           _jobRole(
-              'Multiple conversations and demos within the team to learn more about flutter and make our existing apps more scalable.',
+              'The team had several discussions and demos to learn more about flutter and make our existing apps more scalable.',
               context),
         ],
       );
-    } else if (selectedIndex == 1) {
+    } else if (selectedIndex == 2) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -59,12 +81,12 @@ class CompanyJobInfo extends StatelessWidget {
             height: 16,
           ),
           _jobRole(
-              'Under the guidance of a Tech Lead and a Designer, I built the 2.0 version of Zappfresh from the ground up using Agile methodologies.',
+              'I developed the 2.0 version of Zappfresh from the bottom up utilising Agile processes with the help of a Tech Lead and a Designer.',
               context),
           SizedBox(
             height: 12,
           ),
-          _jobRole("Built and created a basic inventory app in Flutter that is utilised by people at Zappfresh's numerous hubs.",
+          _jobRole("In Flutter, I built and constructed a basic inventory app that is used by users at Zappfresh's many hubs.",
               context),
           SizedBox(
             height: 12,
@@ -72,7 +94,7 @@ class CompanyJobInfo extends StatelessWidget {
           _jobRole("Responsible for the design, development, testing, and upkeep of Zappfresh's current app.", context),
         ],
       );
-    } else if (selectedIndex == 2) {
+    } else if (selectedIndex == 3) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -92,7 +114,7 @@ class CompanyJobInfo extends StatelessWidget {
           _jobRole('Conducted and Organised Startup Events and networking with people', context),
         ],
       );
-    } else if (selectedIndex == 3) {
+    } else if (selectedIndex == 4) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

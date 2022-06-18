@@ -12,7 +12,7 @@ class Experience extends StatefulWidget {
 class _ExperienceState extends State<Experience> {
   List<String> _companyList;
   List<bool> _companySelected = <bool>[];
-  int _selectedIndex = 4;
+  int _selectedIndex;
 
   @override
   void initState() {
@@ -25,8 +25,10 @@ class _ExperienceState extends State<Experience> {
       'DUIT Mobile',
       'Zappfresh',
       'Innovaccer',
+      'Gojek',
     ];
-    for (int i = 0; i < 4; i++) {
+    _selectedIndex = _companyList.length-1;
+    for (int i = 0; i < _companyList.length-1; i++) {
       _companySelected.add(false);
     }
     _companySelected.add(true);
@@ -81,7 +83,7 @@ class _ExperienceState extends State<Experience> {
                               setState(() {
                                 _selectedIndex = index;
                                 _companySelected[index] = true;
-                                for (int i = 0; i < 5; i++) {
+                                for (int i = 0; i < _companyList.length; i++) {
                                   if (i != index) {
                                     _companySelected[i] = false;
                                   }
@@ -104,7 +106,7 @@ class _ExperienceState extends State<Experience> {
                         left: 12,
                       ),
                       child: CompanyJobInfo(
-                        selectedIndex: CommonFunction.isApp(context) ? _selectedIndex : 4 - _selectedIndex,
+                        selectedIndex: CommonFunction.isApp(context) ? _selectedIndex : _companyList.length-1 - _selectedIndex,
                       ),
                     ),
                   ],
@@ -130,7 +132,7 @@ class _ExperienceState extends State<Experience> {
                             setState(() {
                               _selectedIndex = index;
                               _companySelected[index] = true;
-                              for (int i = 0; i < 5; i++) {
+                              for (int i = 0; i < _companyList.length; i++) {
                                 if (i != index) {
                                   _companySelected[i] = false;
                                 }
@@ -151,7 +153,7 @@ class _ExperienceState extends State<Experience> {
                   Expanded(
                     flex: 2,
                     child: CompanyJobInfo(
-                      selectedIndex: 4 - _selectedIndex,
+                      selectedIndex: _companyList.length-1 - _selectedIndex,
                     ),
                   ),
                 ],

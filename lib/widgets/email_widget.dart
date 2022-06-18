@@ -87,7 +87,7 @@ class _EmailWidgetState extends State<EmailWidget> {
                     fontFamily: 'FiraSans',
                   ),
                   child: Icon(
-                    Icons.open_in_new,
+                    Icons.whatshot,
                     size: 20,
                     color: Constants.lightestSlate,
                   ),
