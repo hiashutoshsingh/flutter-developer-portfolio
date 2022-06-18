@@ -22,7 +22,7 @@ class AboutMeWidget extends StatelessWidget {
           height: CommonFunction.isApp(context) ? 16 : 32,
         ),
         Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Flexible(
               flex: 10,

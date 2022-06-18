@@ -10,7 +10,7 @@ class ProfileImageWidget extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(CommonFunction.isApp(context) ? 8 : 6),
         child: Image.asset(
-          "asset/profile.jpeg",
+          "asset/profile.png",
           height: CommonFunction.isApp(context) ? size.height * .3 : null,
           width: CommonFunction.isApp(context) ? size.width * .6 : null,
           fit: BoxFit.cover,
